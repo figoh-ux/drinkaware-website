@@ -13,11 +13,16 @@ import {
   Info,
   Menu,
   MessageCircle,
-  GraduationCap,
   Heart,
   ShieldAlert,
   ChevronDown,
+  ShoppingBag,
+  Gamepad2,
 } from "lucide-react";
+
+/* =========================================
+   NAVIGATION BAR
+========================================= */
 
 function Navbar() {
   return (
@@ -37,18 +42,23 @@ function Navbar() {
           <Link href="#home" className="nav-link active">
             Home
           </Link>
+
           <Link href="#about" className="nav-link">
             About
           </Link>
+
           <Link href="#why-drinkaware" className="nav-link">
             Why DrinkAware
           </Link>
+
           <Link href="#features" className="nav-link">
             Features
           </Link>
+
           <Link href="#how-it-works" className="nav-link">
             How It Works
           </Link>
+
           <Link href="#faq" className="nav-link">
             FAQs
           </Link>
@@ -78,6 +88,10 @@ function Navbar() {
   );
 }
 
+/* =========================================
+   HERO SECTION
+========================================= */
+
 function Hero() {
   return (
     <section className="hero-section" id="home">
@@ -106,7 +120,7 @@ function Hero() {
           </p>
 
           <div className="hero-buttons">
-            <Link href="#download" className="primary-button">
+            <Link href="#features" className="primary-button">
               Explore the App
               <ArrowRight size={19} />
             </Link>
@@ -135,7 +149,8 @@ function Hero() {
           <div className="hero-circle circle-two" />
 
           <div className="phone-frame">
-            <div className="phone-notch" />
+            {/* Traditional iPhone-style notch */}
+            <div className="phone-notch" aria-hidden="true" />
 
             <div className="phone-screen">
               <Image
@@ -184,6 +199,10 @@ function Hero() {
     </section>
   );
 }
+
+/* =========================================
+   ABOUT SECTION
+========================================= */
 
 function About() {
   return (
@@ -237,7 +256,9 @@ function About() {
   );
 }
 
-/* WHY DRINKAWARE MATTERS */
+/* =========================================
+   WHY DRINKAWARE MATTERS
+========================================= */
 
 function WhyDrinkAware() {
   const reasons = [
@@ -326,87 +347,175 @@ function WhyDrinkAware() {
   );
 }
 
-/* FEATURES */
+/* =========================================
+   REUSABLE IPHONE-STYLE PHONE FRAME
+========================================= */
+
+function AppPhoneFrame({
+  src,
+  alt,
+  priority = false,
+}: {
+  src: string;
+  alt: string;
+  priority?: boolean;
+}) {
+  return (
+    <div className="phone-frame feature-phone-frame">
+      {/* Small traditional notch - no Dynamic Island */}
+      <div className="phone-notch" aria-hidden="true" />
+
+      <div className="phone-screen">
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          priority={priority}
+          sizes="(max-width: 768px) 70vw, 280px"
+          className="app-screenshot"
+        />
+      </div>
+    </div>
+  );
+}
+
+/* =========================================
+   APPLICATION FEATURES
+========================================= */
 
 function Features() {
-  const features = [
-    {
-      icon: ShieldCheck,
-      title: "Drink Safety Awareness",
-      description:
-        "Understand the risks associated with illicit, improperly labelled and potentially unsafe alcoholic drinks.",
-      number: "01",
-    },
-    {
-      icon: BookOpen,
-      title: "Educational Resources",
-      description:
-        "Explore useful information designed to improve understanding of alcohol-related risks and safety.",
-      number: "02",
-    },
-    {
-      icon: HeartHandshake,
-      title: "Support & Rehabilitation",
-      description:
-        "Discover information about relevant support organisations and rehabilitation resources.",
-      number: "03",
-    },
-    {
-      icon: GraduationCap,
-      title: "Knowledge & Guidance",
-      description:
-        "Access awareness information that encourages responsible and informed decision-making.",
-      number: "04",
-    },
-  ];
-
   return (
     <section className="features-section section-padding" id="features">
       <div className="section-container">
         <div className="section-heading centered">
-          <span className="section-label">WHAT DRINKAWARE OFFERS</span>
+          <span className="section-label">EXPLORE THE APPLICATION</span>
 
           <h2>
-            Everything begins with
-            <span> awareness.</span>
+            Discover what
+            <span> DrinkAware offers.</span>
           </h2>
 
           <p>
-            Explore the different areas of DrinkAware and discover how the
-            application supports education, safety awareness and access to
-            helpful resources.
+            Three core areas bring together marketplace access, interactive
+            learning and reliable support information.
           </p>
         </div>
 
-        <div className="features-grid">
-          {features.map((feature) => {
-            const Icon = feature.icon;
+        <div className="app-features-grid">
+          {/* FEATURE 1: MARKETPLACE */}
 
-            return (
-              <article className="feature-card" key={feature.number}>
-                <div className="feature-card-top">
-                  <div className="feature-icon">
-                    <Icon size={25} />
-                  </div>
+          <article className="app-feature-card">
+            <div className="app-feature-image">
+              <AppPhoneFrame
+                src="/marketplace.png"
+                alt="DrinkAware Marketplace application screen"
+              />
+            </div>
 
-                  <span>{feature.number}</span>
+            <div className="app-feature-info">
+              <span className="feature-number">FEATURE 01</span>
+
+              <div className="app-feature-title">
+                <div className="app-feature-mini-icon">
+                  <ShoppingBag size={20} />
                 </div>
 
-                <h3>{feature.title}</h3>
+                <h3>Marketplace</h3>
+              </div>
 
-                <p>{feature.description}</p>
+              <p>
+                Explore the DrinkAware Marketplace, one of the application's
+                core features, designed to provide users with access to its
+                marketplace experience.
+              </p>
 
-                <div className="feature-card-line" />
-              </article>
-            );
-          })}
+              <div className="app-feature-line" />
+            </div>
+          </article>
+
+          {/* FEATURE 2: BOOZECONNECT GAMING */}
+
+          <article className="app-feature-card">
+            <div className="app-feature-image">
+              <AppPhoneFrame
+                src="/boozeconnect-quiz.png"
+                alt="DrinkAware BoozeConnect quiz application screen"
+              />
+            </div>
+
+            <div className="app-feature-info">
+              <span className="feature-number">FEATURE 02</span>
+
+              <div className="app-feature-title">
+                <div className="app-feature-mini-icon">
+                  <Gamepad2 size={20} />
+                </div>
+
+                <h3>BoozeConnect Gaming</h3>
+              </div>
+
+              <p>
+                Learn through interactive quizzes and engaging gaming activities
+                that encourage awareness and improve understanding of
+                alcohol-related risks.
+              </p>
+
+              <div className="app-feature-line" />
+            </div>
+          </article>
+
+          {/* FEATURE 3: HELP AND EDUCATION */}
+
+          <article className="app-feature-card support-feature-card">
+            <div className="support-feature-visual">
+              <div className="support-decoration decoration-one" />
+              <div className="support-decoration decoration-two" />
+
+              <div className="support-feature-icon">
+                <HeartHandshake size={58} />
+              </div>
+
+              <div className="support-feature-small-icon">
+                <BookOpen size={27} />
+              </div>
+
+              <div className="support-feature-small-icon second">
+                <ShieldCheck size={27} />
+              </div>
+
+              <span className="support-visual-caption">
+                INFORMATION. EDUCATION. SUPPORT.
+              </span>
+            </div>
+
+            <div className="app-feature-info">
+              <span className="feature-number">FEATURE 03</span>
+
+              <div className="app-feature-title">
+                <div className="app-feature-mini-icon">
+                  <HeartHandshake size={20} />
+                </div>
+
+                <h3>Help & Educational Resources</h3>
+              </div>
+
+              <p>
+                Access educational information and discover reliable help
+                services and relevant support resources.
+              </p>
+
+              <div className="app-feature-line" />
+            </div>
+          </article>
         </div>
       </div>
     </section>
   );
 }
 
-/* HOW IT WORKS */
+/* =========================================
+   HOW IT WORKS
+========================================= */
 
 function HowItWorks() {
   const steps = [
@@ -481,7 +590,9 @@ function HowItWorks() {
   );
 }
 
-/* SAFETY */
+/* =========================================
+   SAFETY SECTION
+========================================= */
 
 function SafetySection() {
   return (
@@ -532,7 +643,9 @@ function SafetySection() {
   );
 }
 
-/* DOWNLOAD */
+/* =========================================
+   DOWNLOAD SECTION
+========================================= */
 
 function DownloadSection() {
   return (
@@ -580,7 +693,9 @@ function DownloadSection() {
   );
 }
 
-/* FAQ */
+/* =========================================
+   FREQUENTLY ASKED QUESTIONS
+========================================= */
 
 function FAQ() {
   const questions = [
@@ -653,7 +768,9 @@ function FAQ() {
   );
 }
 
-/* FOOTER */
+/* =========================================
+   FOOTER
+========================================= */
 
 function Footer() {
   return (
@@ -714,7 +831,9 @@ function Footer() {
   );
 }
 
-/* MAIN HOMEPAGE */
+/* =========================================
+   MAIN HOMEPAGE
+========================================= */
 
 export default function Home() {
   return (
