@@ -43,7 +43,7 @@ function Navbar() {
             Home
           </Link>
 
-          <Link href="#about" className="nav-link">
+          <Link href="/about" className="nav-link">
             About
           </Link>
 
@@ -75,7 +75,7 @@ function Navbar() {
 
           <div className="mobile-menu-content">
             <Link href="#home">Home</Link>
-            <Link href="#about">About</Link>
+            <Link href="/about">About</Link>
             <Link href="#why-drinkaware">Why DrinkAware</Link>
             <Link href="#features">Features</Link>
             <Link href="#how-it-works">How It Works</Link>
@@ -125,7 +125,7 @@ function Hero() {
               <ArrowRight size={19} />
             </Link>
 
-            <Link href="#about" className="secondary-button">
+            <Link href="/about" className="secondary-button">
               Discover DrinkAware
             </Link>
           </div>
@@ -797,7 +797,7 @@ function Footer() {
           <div className="footer-column">
             <h4>Explore</h4>
             <Link href="#home">Home</Link>
-            <Link href="#about">About Us</Link>
+            <Link href="/about">About Us</Link>
             <Link href="#why-drinkaware">Why DrinkAware</Link>
             <Link href="#features">Features</Link>
             <Link href="#how-it-works">How It Works</Link>
@@ -812,7 +812,7 @@ function Footer() {
 
           <div className="footer-column">
             <h4>Information</h4>
-            <Link href="#about">Our Purpose</Link>
+            <Link href="/about">Our Purpose</Link>
             <Link href="#download">Installation Guide</Link>
             <Link href="#faq">Support Information</Link>
           </div>
