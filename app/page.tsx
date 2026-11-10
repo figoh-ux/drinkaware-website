@@ -702,7 +702,7 @@ function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} DrinkAware. All rights reserved.</p>
+          <p>© 2026 DrinkAware. All rights reserved.</p>
 
           <span>
             Knowledge. Awareness. Informed Choices. Powered by Figoh
