@@ -51,7 +51,7 @@ function Navbar() {
             Why DrinkAware
           </Link>
 
-          <Link href="#features" className="nav-link">
+          <Link href="/features" className="nav-link">
             Features
           </Link>
 
@@ -77,7 +77,7 @@ function Navbar() {
             <Link href="#home">Home</Link>
             <Link href="/about">About</Link>
             <Link href="#why-drinkaware">Why DrinkAware</Link>
-            <Link href="#features">Features</Link>
+            <Link href="/features">Features</Link>
             <Link href="#how-it-works">How It Works</Link>
             <Link href="#faq">FAQs</Link>
             <Link href="#download">Get the App</Link>
@@ -120,7 +120,7 @@ function Hero() {
           </p>
 
           <div className="hero-buttons">
-            <Link href="#features" className="primary-button">
+            <Link href="/features" className="primary-button">
               Explore the App
               <ArrowRight size={19} />
             </Link>
@@ -230,7 +230,7 @@ function About() {
               make more informed decisions.
             </p>
 
-            <Link href="#features" className="text-link">
+            <Link href="/features" className="text-link">
               Explore what DrinkAware offers
               <ArrowRight size={18} />
             </Link>
@@ -799,7 +799,7 @@ function Footer() {
             <Link href="#home">Home</Link>
             <Link href="/about">About Us</Link>
             <Link href="#why-drinkaware">Why DrinkAware</Link>
-            <Link href="#features">Features</Link>
+            <Link href="/features">Features</Link>
             <Link href="#how-it-works">How It Works</Link>
           </div>
 
@@ -807,7 +807,7 @@ function Footer() {
             <h4>Resources</h4>
             <Link href="#download">Get the App</Link>
             <Link href="#faq">FAQs</Link>
-            <Link href="#features">Safety Awareness</Link>
+            <Link href="/features">Safety Awareness</Link>
           </div>
 
           <div className="footer-column">
