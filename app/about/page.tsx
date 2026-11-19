@@ -86,7 +86,6 @@ export default function AboutPage() {
               About
             </Link>
             <Link href="/#features">Features</Link>
-            <Link href="/#how-it-works">How It Works</Link>
             <Link href="/#faq">FAQs</Link>
           </nav>
 
@@ -454,7 +453,6 @@ export default function AboutPage() {
             <Link href="/">Home</Link>
             <Link href="/about">About Us</Link>
             <Link href="/#features">App Features</Link>
-            <Link href="/#how-it-works">How It Works</Link>
           </div>
 
           <div className="about-footer-column">

@@ -90,7 +90,6 @@ export default function FeaturesPage() {
           <Link href="/features" className="active">
             Features
           </Link>
-          <Link href="/#how-it-works">How It Works</Link>
           <Link href="/#faq">FAQs</Link>
         </div>
 

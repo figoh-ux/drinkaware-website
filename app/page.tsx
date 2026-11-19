@@ -55,10 +55,6 @@ function Navbar() {
             Features
           </Link>
 
-          <Link href="#how-it-works" className="nav-link">
-            How It Works
-          </Link>
-
           <Link href="#faq" className="nav-link">
             FAQs
           </Link>
@@ -74,13 +70,12 @@ function Navbar() {
           </summary>
 
           <div className="mobile-menu-content">
-            <Link href="#home">Home</Link>
+            <Link href="/home">Home</Link>
             <Link href="/about">About</Link>
-            <Link href="#why-drinkaware">Why DrinkAware</Link>
+            <Link href="/why-drinkaware">Why DrinkAware</Link>
             <Link href="/features">Features</Link>
-            <Link href="#how-it-works">How It Works</Link>
-            <Link href="#faq">FAQs</Link>
-            <Link href="#download">Get the App</Link>
+            <Link href="/faq">FAQs</Link>
+            <Link href="/download">Get the App</Link>
           </div>
         </details>
       </div>
@@ -800,7 +795,6 @@ function Footer() {
             <Link href="/about">About Us</Link>
             <Link href="#why-drinkaware">Why DrinkAware</Link>
             <Link href="/features">Features</Link>
-            <Link href="#how-it-works">How It Works</Link>
           </div>
 
           <div className="footer-column">
