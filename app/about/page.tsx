@@ -85,8 +85,8 @@ export default function AboutPage() {
             <Link href="/about" className="active">
               About
             </Link>
-            <Link href="/#features">Features</Link>
-            <Link href="/#faq">FAQs</Link>
+            <Link href="/features">Features</Link>
+            <Link href="/faqs">FAQs</Link>
           </nav>
 
           <Link href="/#download" className="about-nav-button">
@@ -127,7 +127,7 @@ export default function AboutPage() {
               Discover Our Story <ArrowRight size={17} />
             </Link>
 
-            <Link href="/#features" className="about-outline-button">
+            <Link href="/features" className="about-outline-button">
               Explore App Features
             </Link>
           </div>
@@ -199,7 +199,7 @@ export default function AboutPage() {
               that can help individuals and communities.
             </p>
 
-            <Link href="/#features" className="about-text-link">
+            <Link href="/features" className="about-text-link">
               Discover what the app offers <ArrowRight size={17} />
             </Link>
           </div>
@@ -424,7 +424,7 @@ export default function AboutPage() {
             features, interactive experiences and support resources.
           </p>
 
-          <Link href="/#features" className="about-primary-button">
+          <Link href="/features" className="about-primary-button">
             Explore DrinkAware <ArrowRight size={17} />
           </Link>
         </div>
@@ -452,14 +452,14 @@ export default function AboutPage() {
             <h4>Explore</h4>
             <Link href="/">Home</Link>
             <Link href="/about">About Us</Link>
-            <Link href="/#features">App Features</Link>
+            <Link href="/features">App Features</Link>
           </div>
 
           <div className="about-footer-column">
             <h4>Discover</h4>
-            <Link href="/#faq">FAQs</Link>
+            <Link href="/faqs">FAQs</Link>
             <Link href="/#download">Get the App</Link>
-            <Link href="/#features">Safety Awareness</Link>
+            <Link href="/features">Safety Awareness</Link>
           </div>
         </div>
 

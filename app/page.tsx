@@ -51,7 +51,7 @@ function Navbar() {
             Features
           </Link>
 
-          <Link href="#faq" className="nav-link">
+          <Link href="/faqs" className="nav-link">
             FAQs
           </Link>
         </nav>
@@ -68,9 +68,8 @@ function Navbar() {
           <div className="mobile-menu-content">
             <Link href="/home">Home</Link>
             <Link href="/about">About</Link>
-            <Link href="/why-drinkaware">Why DrinkAware</Link>
             <Link href="/features">Features</Link>
-            <Link href="/faq">FAQs</Link>
+            <Link href="/faqs">FAQs</Link>
             <Link href="/download">Get the App</Link>
           </div>
         </details>
@@ -613,7 +612,7 @@ function SafetySection() {
               </span>
             </div>
 
-            <Link href="#about" className="safety-link">
+            <Link href="/about" className="safety-link">
               Learn about DrinkAware
               <ArrowRight size={18} />
             </Link>
@@ -789,14 +788,13 @@ function Footer() {
             <h4>Explore</h4>
             <Link href="#home">Home</Link>
             <Link href="/about">About Us</Link>
-            <Link href="#why-drinkaware">Why DrinkAware</Link>
             <Link href="/features">Features</Link>
           </div>
 
           <div className="footer-column">
             <h4>Resources</h4>
             <Link href="#download">Get the App</Link>
-            <Link href="#faq">FAQs</Link>
+            <Link href="/faqs">FAQs</Link>
             <Link href="/features">Safety Awareness</Link>
           </div>
 
@@ -804,7 +802,7 @@ function Footer() {
             <h4>Information</h4>
             <Link href="/about">Our Purpose</Link>
             <Link href="#download">Installation Guide</Link>
-            <Link href="#faq">Support Information</Link>
+            <Link href="/faqs">Support Information</Link>
           </div>
         </div>
 
@@ -834,11 +832,7 @@ export default function Home() {
 
       <About />
 
-      <WhyDrinkAware />
-
       <Features />
-
-      <HowItWorks />
 
       <SafetySection />
 

@@ -90,7 +90,7 @@ export default function FeaturesPage() {
           <Link href="/features" className="active">
             Features
           </Link>
-          <Link href="/#faq">FAQs</Link>
+          <Link href="/faqs">FAQs</Link>
         </div>
 
         <Link href="/#download" className="features-nav-button">
