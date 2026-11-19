@@ -47,10 +47,6 @@ function Navbar() {
             About
           </Link>
 
-          <Link href="#why-drinkaware" className="nav-link">
-            Why DrinkAware
-          </Link>
-
           <Link href="/features" className="nav-link">
             Features
           </Link>
