@@ -399,9 +399,12 @@ export default function FAQsPage() {
         {/* FOOTER BOTTOM */}
 
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} DrinkAware. All rights reserved.</p>
+          <p>© DrinkAware. All rights reserved.</p>
 
-          <p>Making informed choices for a safer community.Powered by figoh technologies</p>
+          <p>
+            Making informed choices for a safer community.Powered by figoh
+            technologies
+          </p>
         </div>
       </footer>
     </>
