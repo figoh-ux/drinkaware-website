@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -21,6 +22,46 @@ import {
   MessageSquareText,
   Headset,
 } from "lucide-react";
+
+/* =========================================
+   HOMEPAGE SEO METADATA
+========================================= */
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "DrinkAware | Alcohol Awareness, Education and Safer Choices",
+  },
+
+  description:
+    "Discover DrinkAware, a platform promoting alcohol safety awareness, education and informed choices. Explore Learning, BoozeConnect quizzes, real-life Stories, Help and Support, Anonymous Reporting and the Marketplace.",
+
+  keywords: [
+    "DrinkAware Zimbabwe",
+    "alcohol awareness Zimbabwe",
+    "alcohol safety awareness",
+    "illicit alcohol awareness",
+    "unsafe alcoholic drinks",
+    "alcohol education",
+    "substance abuse awareness",
+    "BoozeConnect",
+    "alcohol support services",
+    "anonymous reporting",
+  ],
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    title: "DrinkAware | Alcohol Awareness and Safer Choices",
+    description:
+      "Promoting awareness, education and informed decisions through the DrinkAware application.",
+    url: "/",
+    siteName: "DrinkAware",
+    type: "website",
+    locale: "en_ZW",
+  },
+};
 
 /* =========================================
    NAVIGATION BAR
@@ -339,7 +380,7 @@ function WhyDrinkAware() {
 }
 
 /* =========================================
-   REUSABLE IPHONE-STYLE PHONE FRAME
+   REUSABLE PHONE FRAME
 ========================================= */
 
 function AppPhoneFrame({
@@ -432,8 +473,6 @@ function Features() {
   return (
     <section className="features-section section-padding" id="features">
       <div className="section-container">
-        {/* SECTION HEADING */}
-
         <div className="section-heading centered">
           <span className="section-label">EXPLORE THE APPLICATION</span>
 
@@ -449,16 +488,12 @@ function Features() {
           </p>
         </div>
 
-        {/* FEATURES GRID */}
-
         <div className="app-features-grid">
           {features.map((feature) => {
             const Icon = feature.icon;
 
             return (
               <article className="app-feature-card" key={feature.number}>
-                {/* FEATURE VISUAL */}
-
                 <div className="app-feature-image">
                   {feature.hasImage && feature.image ? (
                     <AppPhoneFrame
@@ -485,8 +520,6 @@ function Features() {
                   )}
                 </div>
 
-                {/* FEATURE INFORMATION */}
-
                 <div className="app-feature-info">
                   <span className="feature-number">
                     FEATURE {feature.number}
@@ -508,8 +541,6 @@ function Features() {
             );
           })}
         </div>
-
-        {/* BOTTOM MESSAGE */}
 
         <div className="features-bottom-message">
           <ShieldCheck size={23} />
@@ -600,6 +631,7 @@ function HowItWorks() {
     </section>
   );
 }
+
 /* =========================================
    DOWNLOAD SECTION
 ========================================= */

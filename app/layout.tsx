@@ -8,19 +8,57 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://drinkaware-website-ia18.vercel.app"),
+
   title: {
-    default: "DrinkAware | Awareness. Knowledge. Safer Choices.",
+    default: "DrinkAware | Awareness, Knowledge and Safer Choices",
     template: "%s | DrinkAware",
   },
+
   description:
-    "Discover DrinkAware, a mobile application dedicated to alcohol safety awareness, education and access to support resources.",
+    "DrinkAware promotes alcohol safety awareness, education and informed choices. Explore educational resources, interactive quizzes, real-life stories, support services and anonymous reporting.",
+
   keywords: [
     "DrinkAware",
     "alcohol awareness",
-    "drink safety",
+    "alcohol safety",
+    "alcohol education",
+    "substance abuse awareness",
+    "BoozeConnect",
+    "alcohol support services",
+    "anonymous reporting",
+    "Learning",
     "health awareness",
-    "support resources",
+    "Zimbabwe",
   ],
+
+  applicationName: "DrinkAware",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+
+  openGraph: {
+    title: "DrinkAware | Awareness, Knowledge and Safer Choices",
+    description:
+      "Discover DrinkAware, an awareness platform promoting education, informed choices and access to support services.",
+    url: "https://drinkaware-website-ia18.vercel.app",
+    siteName: "DrinkAware",
+    locale: "en_ZW",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "DrinkAware | Awareness, Knowledge and Safer Choices",
+    description:
+      "Promoting awareness, education and safer choices through DrinkAware.",
+  },
 };
 
 export default function RootLayout({

@@ -1,13 +1,11 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-
 import Image from "next/image";
 
 import {
   ArrowRight,
   ShoppingBag,
   Gamepad2,
-  HeartHandshake,
   ShieldCheck,
   BookOpen,
   CheckCircle2,
@@ -18,9 +16,36 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Our Features",
+  title: "DrinkAware Features | Learning, Support and Awareness",
+
   description:
-    "Explore DrinkAware's six key features: Marketplace, Learning, BoozeConnect quizzes, Stories, Help and Support, and Anonymous Reporting.",
+    "Explore DrinkAware's six features: Marketplace, Learning, BoozeConnect interactive quizzes, real-life Stories, Help and Support, and Anonymous Reporting. Discover tools that promote awareness and informed choices.",
+
+  alternates: {
+    canonical: "/features",
+  },
+
+  openGraph: {
+    title: "DrinkAware Features | Learning, Support and Awareness",
+    description:
+      "Discover the six DrinkAware features bringing together education, interactive quizzes, real-life stories, support resources and anonymous reporting.",
+    url: "/features",
+    siteName: "DrinkAware",
+    locale: "en_ZW",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "DrinkAware Features",
+    description:
+      "Explore the six features of DrinkAware and discover an awareness-focused digital experience.",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 /* =========================================

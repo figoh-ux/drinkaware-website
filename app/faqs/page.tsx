@@ -38,7 +38,7 @@ const faqCategories = [
       {
         question: "What features are available in DrinkAware?",
         answer:
-          "DrinkAware currently focuses on three main features: Marketplace, BoozeConnect Gaming and access to reliable help services and educational information.",
+          "DrinkAware has six key features: Marketplace, Learning, BoozeConnect Quiz, Stories, Help & Support, and Anonymous Reporting. Together, these features promote awareness, education, informed decisions and access to useful support resources.",
       },
       {
         question: "What is the Marketplace?",
@@ -48,12 +48,27 @@ const faqCategories = [
       {
         question: "What is BoozeConnect Gaming?",
         answer:
-          "BoozeConnect is the interactive gaming section of DrinkAware. It provides an engaging way for users to participate in activities and quizzes while learning about alcohol awareness and safety.",
+          "BoozeConnect is the interactive gaming and quiz section of DrinkAware. It provides an engaging way for users to participate in quizzes while learning about alcohol awareness and safety.",
+      },
+      {
+        question: "What is the Learning feature?",
+        answer:
+          "The Learning feature provides educational information about alcohol and substance abuse. It helps users improve their understanding of associated risks and make informed decisions.",
+      },
+      {
+        question: "What is the Stories feature?",
+        answer:
+          "The Stories feature shares real-life experiences that encourage reflection, awareness and informed choices.",
       },
       {
         question: "Can I access help through DrinkAware?",
         answer:
-          "Yes. DrinkAware provides access to information about reliable help services and educational resources. Users can use these resources to learn more about available support options.",
+          "Yes. DrinkAware provides access to information about reliable help services and professional assistance. Users can explore these resources to learn more about available support options.",
+      },
+      {
+        question: "Can I report suspected illegal brewing?",
+        answer:
+          "Yes. The Anonymous Reporting feature allows users to report suspected illegal brewing activities for appropriate follow-up by relevant authorities.",
       },
     ],
   },
@@ -148,7 +163,7 @@ export default function FAQsPage() {
               FAQs
             </Link>
 
-            <Link href="/get-app" className="faq-nav-contact">
+            <Link href="/download" className="faq-nav-contact">
               Get App
             </Link>
           </nav>
@@ -402,8 +417,8 @@ export default function FAQsPage() {
           <p>© DrinkAware. All rights reserved.</p>
 
           <p>
-            Making informed choices for a safer community.Powered by figoh
-            technologies
+            Making informed choices for a safer community. Powered by Figoh
+            Technologies.
           </p>
         </div>
       </footer>
