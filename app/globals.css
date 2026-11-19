@@ -4031,51 +4031,114 @@ button {
 ========================================= */
 
 .safety-section {
-  padding: 65px 7%;
+  padding: 75px 7%;
   background: #ffffff;
 }
 
 .safety-content {
-  max-width: 1050px;
+  max-width: 1100px;
   margin: auto;
-  background: #eaf8ef;
-  padding: 35px 40px;
-  border-radius: 13px;
+  background: linear-gradient(135deg, #eaf8ef, #f4fcf7);
+  padding: 40px 45px;
+  border-radius: 18px;
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 30px;
+  border: 1px solid #d9f0e2;
+  box-shadow: 0 10px 30px rgba(25, 60, 45, 0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.safety-content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(25, 60, 45, 0.1);
 }
 
 .safety-icon {
-  min-width: 65px;
-  height: 65px;
+  min-width: 70px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   background: #d0f0dc;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
+  font-size: 34px;
+  color: #20a366;
 }
 
 .safety-content span {
+  display: inline-block;
   color: #20a366;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 2px;
+  margin-bottom: 5px;
 }
 
 .safety-content h2 {
   color: #193c2d;
-  font-size: 24px;
-  margin: 10px 0;
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.4;
+  margin: 8px 0 12px;
 }
 
 .safety-content p {
   color: #61756a;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.8;
+  margin: 0;
+  max-width: 850px;
 }
 
+/* TABLET RESPONSIVENESS */
+@media (max-width: 768px) {
+  .safety-section {
+    padding: 55px 5%;
+  }
+
+  .safety-content {
+    padding: 30px 25px;
+    gap: 20px;
+  }
+
+  .safety-content h2 {
+    font-size: 22px;
+  }
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 480px) {
+  .safety-section {
+    padding: 40px 5%;
+  }
+
+  .safety-content {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px 22px;
+    gap: 15px;
+    border-radius: 14px;
+  }
+
+  .safety-icon {
+    width: 58px;
+    min-width: 58px;
+    height: 58px;
+    font-size: 28px;
+  }
+
+  .safety-content h2 {
+    font-size: 20px;
+  }
+
+  .safety-content p {
+    font-size: 14px;
+  }
+}
 /* =========================================
    WHATSAPP CONTACT
 ========================================= */
@@ -4440,5 +4503,1146 @@ button {
 
   .footer-brand {
     grid-column: auto;
+  }
+}
+
+/* =========================================
+   UPDATED APPLICATION FEATURES
+========================================= */
+
+.app-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 55px;
+}
+
+.app-feature-card {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #ffffff;
+  border: 1px solid rgba(20, 40, 70, 0.08);
+  box-shadow: 0 12px 35px rgba(20, 40, 70, 0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.app-feature-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 45px rgba(20, 40, 70, 0.12);
+}
+
+.app-feature-image {
+  height: 290px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(145deg, #eef5ff, #f8fbff);
+}
+
+.app-feature-info {
+  padding: 28px;
+}
+
+.app-feature-info h3 {
+  font-size: 21px;
+  line-height: 1.35;
+}
+
+.app-feature-info p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #64748b;
+  margin-top: 15px;
+}
+
+.app-feature-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 13px;
+}
+
+.app-feature-mini-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #edf4ff;
+  color: #2463b5;
+}
+
+.feature-number {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #d49b36;
+}
+
+.app-feature-line {
+  width: 45px;
+  height: 3px;
+  background: #d49b36;
+  border-radius: 5px;
+  margin-top: 23px;
+}
+
+.feature-phone-frame {
+  transform: scale(0.85);
+}
+
+.support-feature-visual {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(145deg, #eaf2ff, #f8fbff);
+}
+
+.support-decoration {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(45, 105, 180, 0.08);
+}
+
+.decoration-one {
+  width: 240px;
+  height: 240px;
+}
+
+.decoration-two {
+  width: 170px;
+  height: 170px;
+  background: rgba(212, 155, 54, 0.12);
+}
+
+.support-feature-icon {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 35px;
+  background: #ffffff;
+  color: #2463b5;
+  box-shadow: 0 15px 35px rgba(20, 40, 70, 0.12);
+  z-index: 2;
+}
+
+.support-feature-small-icon {
+  position: absolute;
+  top: 45px;
+  right: 55px;
+  width: 53px;
+  height: 53px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #d49b36;
+  box-shadow: 0 8px 20px rgba(20, 40, 70, 0.1);
+  z-index: 3;
+}
+
+.support-visual-caption {
+  position: absolute;
+  bottom: 27px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #45617f;
+}
+
+.features-bottom-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 25px;
+  margin-top: 40px;
+  border-radius: 16px;
+  background: #eef5ff;
+  color: #2463b5;
+}
+
+.features-bottom-message svg {
+  flex-shrink: 0;
+}
+
+.features-bottom-message p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* =========================================
+   RESPONSIVE FEATURES
+========================================= */
+
+@media (max-width: 1000px) {
+  .app-features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .app-features-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-top: 35px;
+  }
+
+  .app-feature-image {
+    height: 280px;
+  }
+
+  .app-feature-info {
+    padding: 23px;
+  }
+
+  .features-bottom-message {
+    align-items: flex-start;
+    padding: 20px;
+  }
+}
+
+/* =========================================
+   DRINKAWARE - SIX FEATURES PAGE
+   Additional styling
+========================================= */
+
+/* FEATURE ILLUSTRATIONS */
+
+.feature-illustration {
+  position: relative;
+  width: 100%;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #edf4ff 0%, #f8fbff 55%, #fff9ed 100%);
+}
+
+.feature-illustration-circle {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(36, 99, 181, 0.1);
+  box-shadow: 0 20px 60px rgba(30, 70, 120, 0.08);
+}
+
+.feature-illustration-icon {
+  width: 145px;
+  height: 145px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 38px;
+  background: #ffffff;
+  color: #2463b5;
+  box-shadow: 0 15px 40px rgba(30, 70, 120, 0.13);
+  transition: transform 0.3s ease;
+}
+
+.feature-illustration:hover .feature-illustration-icon {
+  transform: translateY(-8px);
+}
+
+.feature-illustration-badge {
+  position: absolute;
+  top: 65px;
+  right: 65px;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: #ffffff;
+  color: #d49b36;
+  box-shadow: 0 10px 25px rgba(30, 70, 120, 0.1);
+}
+
+.feature-illustration-caption {
+  position: absolute;
+  bottom: 38px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #45617f;
+}
+
+/* FEATURE IMAGE DECORATIONS */
+
+.feature-image-decoration {
+  border-radius: 50%;
+  background: rgba(36, 99, 181, 0.06);
+}
+
+/* FEATURE PHONE DISPLAY */
+
+.feature-phone {
+  transition: transform 0.35s ease;
+}
+
+.feature-phone:hover {
+  transform: translateY(-8px);
+}
+
+/* FEATURE DETAIL CONTENT */
+
+.feature-detail-content {
+  position: relative;
+}
+
+.feature-detail-content h2 {
+  line-height: 1.2;
+}
+
+.feature-detail-content p {
+  line-height: 1.9;
+}
+
+.feature-detail-content ul {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.feature-detail-content ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.6;
+}
+
+.feature-detail-content ul li svg {
+  flex-shrink: 0;
+  color: #d49b36;
+  margin-top: 2px;
+}
+
+/* FEATURE ICON */
+
+.feature-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #edf4ff;
+  color: #2463b5;
+}
+
+/* FEATURE NUMBER */
+
+.feature-number {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #d49b36;
+  margin-bottom: 18px;
+}
+
+/* =========================================
+   FEATURES HERO
+========================================= */
+
+.features-hero-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.6;
+}
+
+.features-hero-note svg {
+  flex-shrink: 0;
+  color: #d49b36;
+}
+
+/* =========================================
+   FEATURES INTRODUCTION
+========================================= */
+
+.features-intro {
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.features-intro h2 {
+  line-height: 1.25;
+}
+
+.features-intro p {
+  line-height: 1.8;
+}
+
+/* =========================================
+   FEATURES PURPOSE SECTION
+========================================= */
+
+.features-purpose {
+  position: relative;
+  overflow: hidden;
+}
+
+.features-purpose-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 65px;
+  height: 65px;
+  border-radius: 20px;
+  background: #edf4ff;
+  color: #2463b5;
+  margin-bottom: 22px;
+}
+
+.features-purpose p {
+  line-height: 1.9;
+}
+
+/* =========================================
+   FEATURES CTA
+========================================= */
+
+.features-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+.features-cta p {
+  line-height: 1.8;
+}
+
+/* =========================================
+   FEATURES FOOTER
+========================================= */
+
+.features-footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.features-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 1024px) {
+  .feature-illustration {
+    min-height: 400px;
+  }
+
+  .feature-illustration-circle {
+    width: 220px;
+    height: 220px;
+  }
+
+  .feature-illustration-icon {
+    width: 125px;
+    height: 125px;
+  }
+
+  .feature-illustration-badge {
+    top: 45px;
+    right: 35px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 768px) {
+  .features-hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .features-hero-content h1 {
+    font-size: clamp(34px, 8vw, 48px);
+    line-height: 1.15;
+  }
+
+  .features-hero-content p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .features-hero-actions {
+    flex-wrap: wrap;
+  }
+
+  .features-hero-visual {
+    margin-top: 35px;
+  }
+
+  .features-hero-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .features-intro {
+    padding-top: 65px;
+    padding-bottom: 30px;
+  }
+
+  .features-intro h2 {
+    font-size: 30px;
+  }
+
+  .feature-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .feature-detail.feature-reverse {
+    flex-direction: column;
+  }
+
+  .feature-detail-image {
+    width: 100%;
+  }
+
+  .feature-illustration {
+    min-height: 350px;
+  }
+
+  .feature-illustration-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .feature-illustration-icon {
+    width: 115px;
+    height: 115px;
+  }
+
+  .feature-illustration-badge {
+    top: 35px;
+    right: 30px;
+  }
+
+  .feature-detail-content {
+    width: 100%;
+  }
+
+  .feature-detail-content h2 {
+    font-size: 30px;
+  }
+
+  .feature-detail-content h3 {
+    font-size: 17px;
+  }
+
+  .features-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .features-cta .features-primary-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .features-footer-links {
+    gap: 18px;
+  }
+
+  .features-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE DEVICES
+========================================= */
+
+@media (max-width: 480px) {
+  .features-hero-content h1 {
+    font-size: 34px;
+  }
+
+  .features-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .features-hero-actions a {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .feature-illustration {
+    min-height: 300px;
+  }
+
+  .feature-illustration-circle {
+    width: 175px;
+    height: 175px;
+  }
+
+  .feature-illustration-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 28px;
+  }
+
+  .feature-illustration-icon svg {
+    width: 55px;
+    height: 55px;
+  }
+
+  .feature-illustration-badge {
+    width: 48px;
+    height: 48px;
+    top: 25px;
+    right: 20px;
+  }
+
+  .feature-illustration-caption {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .feature-detail-content h2 {
+    font-size: 27px;
+  }
+
+  .features-footer-links {
+    gap: 14px;
+    font-size: 13px;
+  }
+}
+
+/* =========================================
+   DRINKAWARE DOWNLOAD PAGE
+========================================= */
+
+.download-page {
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.download-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+/* HERO */
+
+.download-hero {
+  padding: 90px 0;
+  background: linear-gradient(135deg, #f4f9ff, #ffffff);
+}
+
+.download-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.download-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #2475b9;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 22px;
+}
+
+.download-hero-content h1 {
+  color: #152c48;
+  font-size: clamp(40px, 5vw, 62px);
+  line-height: 1.12;
+  font-weight: 850;
+  margin-bottom: 22px;
+}
+
+.download-hero-content h1 span,
+.download-section-heading h2 span {
+  display: block;
+  color: #2475b9;
+}
+
+.download-hero-content > p {
+  max-width: 560px;
+  color: #68798b;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.download-hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.download-primary-btn,
+.download-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 22px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 750;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.download-primary-btn {
+  background: #2475b9;
+  color: #ffffff;
+}
+
+.download-primary-btn:hover {
+  background: #185b95;
+  transform: translateY(-3px);
+}
+
+.download-secondary-btn {
+  border: 1px solid #d7e4ef;
+  color: #193c5c;
+  background: #ffffff;
+}
+
+.download-secondary-btn:hover {
+  border-color: #2475b9;
+  color: #2475b9;
+}
+
+.download-trust {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #26835b;
+  font-size: 13px;
+  font-weight: 650;
+  margin-top: 35px;
+}
+
+/* HERO IMAGE */
+
+.download-hero-image {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-image-glow {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: #dceeff;
+  filter: blur(3px);
+}
+
+.download-phone-frame {
+  position: relative;
+  width: 270px;
+  height: 490px;
+  border: 9px solid #172b43;
+  border-radius: 35px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 25px 60px rgba(24, 55, 85, 0.2);
+  z-index: 1;
+}
+
+.download-phone-frame img {
+  object-fit: cover;
+}
+
+.download-image-caption {
+  position: relative;
+  z-index: 2;
+  margin-top: 20px;
+  color: #2475b9;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* SECTION HEADINGS */
+
+.download-section-heading {
+  max-width: 650px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.download-label {
+  color: #2475b9;
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 2px;
+}
+
+.download-section-heading h2 {
+  color: #152c48;
+  font-size: clamp(30px, 4vw, 42px);
+  line-height: 1.3;
+  margin: 14px 0;
+}
+
+.download-section-heading p {
+  color: #718094;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* AVAILABILITY */
+
+.download-status-section {
+  padding: 85px 0;
+  background: #ffffff;
+}
+
+.download-availability-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  max-width: 950px;
+  margin: auto;
+  padding: 40px;
+  background: #f1f8ff;
+  border: 1px solid #dceaf7;
+  border-radius: 17px;
+}
+
+.availability-icon {
+  min-width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dceeff;
+  color: #2475b9;
+  border-radius: 15px;
+}
+
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #2475b9;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 1px;
+}
+
+.availability-content h3 {
+  color: #193c5c;
+  font-size: 24px;
+  margin: 13px 0;
+}
+
+.availability-content > p {
+  color: #68798b;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.availability-note {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 20px;
+  color: #26835b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* APPLICATION BENEFITS */
+
+.download-benefits-section {
+  padding: 85px 0;
+  background: #f7faff;
+}
+
+.download-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.download-benefit-card {
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #e7eef6;
+  border-radius: 14px;
+  transition: 0.3s ease;
+}
+
+.download-benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(28, 68, 105, 0.08);
+}
+
+.download-benefit-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #e8f3ff;
+  color: #2475b9;
+  margin-bottom: 20px;
+}
+
+.download-benefit-card h3 {
+  color: #193c5c;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.download-benefit-card p {
+  color: #718094;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.download-features-link {
+  text-align: center;
+  margin-top: 35px;
+}
+
+.download-features-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #2475b9;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+/* INSTALLATION */
+
+.download-install-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.download-install-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  padding: 40px;
+  background: #f2faf5;
+  border: 1px solid #dcefe3;
+  border-radius: 17px;
+}
+
+.install-icon {
+  min-width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background: #d9f1e2;
+  color: #218653;
+}
+
+.install-content h2 {
+  color: #193c2d;
+  font-size: 27px;
+  margin: 12px 0;
+}
+
+.install-content > p {
+  color: #687d70;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.install-points {
+  display: grid;
+  gap: 13px;
+  margin-top: 22px;
+}
+
+.install-points div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #278653;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+/* FINAL CALL TO ACTION */
+
+.download-final-section {
+  padding: 70px 0;
+}
+
+.download-final-card {
+  padding: 65px 25px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #173d65, #2475b9);
+  text-align: center;
+  color: #ffffff;
+}
+
+.download-final-card > svg {
+  margin-bottom: 20px;
+}
+
+.download-final-card h2 {
+  font-size: clamp(30px, 4vw, 42px);
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.download-final-card p {
+  color: #e0edfa;
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+.download-final-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 23px;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #193c5c;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 750;
+  transition: 0.3s ease;
+}
+
+.download-final-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+  .download-hero-grid {
+    gap: 35px;
+  }
+
+  .download-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .download-hero {
+    padding: 65px 0;
+  }
+
+  .download-hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .download-hero-content > p {
+    margin: auto;
+  }
+
+  .download-hero-buttons {
+    justify-content: center;
+  }
+
+  .download-trust {
+    justify-content: center;
+  }
+
+  .download-phone-frame {
+    width: 230px;
+    height: 420px;
+  }
+
+  .download-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .download-availability-card,
+  .download-install-card {
+    flex-direction: column;
+    padding: 27px;
+  }
+
+  .download-status-section,
+  .download-benefits-section,
+  .download-install-section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .download-container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .download-hero-buttons {
+    flex-direction: column;
+  }
+
+  .download-primary-btn,
+  .download-secondary-btn {
+    width: 100%;
   }
 }

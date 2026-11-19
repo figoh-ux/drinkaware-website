@@ -18,6 +18,8 @@ import {
   ChevronDown,
   ShoppingBag,
   Gamepad2,
+  MessageSquareText,
+  Headset,
 } from "lucide-react";
 
 /* =========================================
@@ -56,7 +58,7 @@ function Navbar() {
           </Link>
         </nav>
 
-        <Link href="#download" className="nav-cta">
+        <Link href="/download" className="nav-cta">
           Get the App <ArrowRight size={16} />
         </Link>
 
@@ -66,7 +68,7 @@ function Navbar() {
           </summary>
 
           <div className="mobile-menu-content">
-            <Link href="/home">Home</Link>
+            <Link href="/">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/features">Features</Link>
             <Link href="/faqs">FAQs</Link>
@@ -139,7 +141,6 @@ function Hero() {
           <div className="hero-circle circle-two" />
 
           <div className="phone-frame">
-            {/* Traditional iPhone-style notch */}
             <div className="phone-notch" aria-hidden="true" />
 
             <div className="phone-screen">
@@ -215,9 +216,9 @@ function About() {
             </p>
 
             <p>
-              Through educational information, safety guidance and access to
-              support resources, the application aims to empower individuals to
-              make more informed decisions.
+              Through educational information, safety guidance, interactive
+              activities and access to support resources, the application aims
+              to empower individuals to make more informed decisions.
             </p>
 
             <Link href="/features" className="text-link">
@@ -352,7 +353,6 @@ function AppPhoneFrame({
 }) {
   return (
     <div className="phone-frame feature-phone-frame">
-      {/* Small traditional notch - no Dynamic Island */}
       <div className="phone-notch" aria-hidden="true" />
 
       <div className="phone-screen">
@@ -374,9 +374,66 @@ function AppPhoneFrame({
 ========================================= */
 
 function Features() {
+  const features = [
+    {
+      number: "01",
+      title: "Marketplace",
+      description:
+        "Explore the DrinkAware Marketplace, one of the application's core features, designed to provide users with access to its marketplace experience.",
+      icon: ShoppingBag,
+      image: "/marketplace.png",
+      imageAlt: "DrinkAware Marketplace application screen",
+      hasImage: true,
+    },
+    {
+      number: "02",
+      title: "Learning",
+      description:
+        "Access educational information on alcohol and substance abuse. Learn about associated risks, improve your understanding and make more informed decisions.",
+      icon: BookOpen,
+      hasImage: false,
+    },
+    {
+      number: "03",
+      title: "Quiz – BoozeConnect",
+      description:
+        "Test your knowledge through interactive quizzes that reinforce learning and help users better understand alcohol-related risks and awareness.",
+      icon: Gamepad2,
+      image: "/boozeconnect-quiz.png",
+      imageAlt: "DrinkAware BoozeConnect quiz application screen",
+      hasImage: true,
+    },
+    {
+      number: "04",
+      title: "Stories",
+      description:
+        "Read and share real-life experiences that encourage reflection, create awareness and inspire individuals to make informed choices.",
+      icon: MessageSquareText,
+      hasImage: false,
+    },
+    {
+      number: "05",
+      title: "Help & Support",
+      description:
+        "Discover relevant support contacts, assistance services and professional resources for individuals seeking guidance and help.",
+      icon: Headset,
+      hasImage: false,
+    },
+    {
+      number: "06",
+      title: "Anonymous Reporting",
+      description:
+        "Report suspected illegal brewing activities anonymously, enabling relevant authorities to receive information for appropriate follow-up.",
+      icon: ShieldAlert,
+      hasImage: false,
+    },
+  ];
+
   return (
     <section className="features-section section-padding" id="features">
       <div className="section-container">
+        {/* SECTION HEADING */}
+
         <div className="section-heading centered">
           <span className="section-label">EXPLORE THE APPLICATION</span>
 
@@ -386,117 +443,81 @@ function Features() {
           </h2>
 
           <p>
-            Three core areas bring together marketplace access, interactive
-            learning and reliable support information.
+            DrinkAware brings together six key features designed to promote
+            awareness, encourage informed decisions and connect users to
+            relevant information and support.
           </p>
         </div>
 
+        {/* FEATURES GRID */}
+
         <div className="app-features-grid">
-          {/* FEATURE 1: MARKETPLACE */}
+          {features.map((feature) => {
+            const Icon = feature.icon;
 
-          <article className="app-feature-card">
-            <div className="app-feature-image">
-              <AppPhoneFrame
-                src="/marketplace.png"
-                alt="DrinkAware Marketplace application screen"
-              />
-            </div>
+            return (
+              <article className="app-feature-card" key={feature.number}>
+                {/* FEATURE VISUAL */}
 
-            <div className="app-feature-info">
-              <span className="feature-number">FEATURE 01</span>
+                <div className="app-feature-image">
+                  {feature.hasImage && feature.image ? (
+                    <AppPhoneFrame
+                      src={feature.image}
+                      alt={feature.imageAlt || feature.title}
+                    />
+                  ) : (
+                    <div className="support-feature-visual">
+                      <div className="support-decoration decoration-one" />
+                      <div className="support-decoration decoration-two" />
 
-              <div className="app-feature-title">
-                <div className="app-feature-mini-icon">
-                  <ShoppingBag size={20} />
+                      <div className="support-feature-icon">
+                        <Icon size={58} strokeWidth={1.5} />
+                      </div>
+
+                      <div className="support-feature-small-icon">
+                        <ShieldCheck size={27} />
+                      </div>
+
+                      <span className="support-visual-caption">
+                        DRINKAWARE APPLICATION
+                      </span>
+                    </div>
+                  )}
                 </div>
 
-                <h3>Marketplace</h3>
-              </div>
+                {/* FEATURE INFORMATION */}
 
-              <p>
-                Explore the DrinkAware Marketplace, one of the application's
-                core features, designed to provide users with access to its
-                marketplace experience.
-              </p>
+                <div className="app-feature-info">
+                  <span className="feature-number">
+                    FEATURE {feature.number}
+                  </span>
 
-              <div className="app-feature-line" />
-            </div>
-          </article>
+                  <div className="app-feature-title">
+                    <div className="app-feature-mini-icon">
+                      <Icon size={20} />
+                    </div>
 
-          {/* FEATURE 2: BOOZECONNECT GAMING */}
+                    <h3>{feature.title}</h3>
+                  </div>
 
-          <article className="app-feature-card">
-            <div className="app-feature-image">
-              <AppPhoneFrame
-                src="/boozeconnect-quiz.png"
-                alt="DrinkAware BoozeConnect quiz application screen"
-              />
-            </div>
+                  <p>{feature.description}</p>
 
-            <div className="app-feature-info">
-              <span className="feature-number">FEATURE 02</span>
-
-              <div className="app-feature-title">
-                <div className="app-feature-mini-icon">
-                  <Gamepad2 size={20} />
+                  <div className="app-feature-line" />
                 </div>
+              </article>
+            );
+          })}
+        </div>
 
-                <h3>BoozeConnect Gaming</h3>
-              </div>
+        {/* BOTTOM MESSAGE */}
 
-              <p>
-                Learn through interactive quizzes and engaging gaming activities
-                that encourage awareness and improve understanding of
-                alcohol-related risks.
-              </p>
+        <div className="features-bottom-message">
+          <ShieldCheck size={23} />
 
-              <div className="app-feature-line" />
-            </div>
-          </article>
-
-          {/* FEATURE 3: HELP AND EDUCATION */}
-
-          <article className="app-feature-card support-feature-card">
-            <div className="support-feature-visual">
-              <div className="support-decoration decoration-one" />
-              <div className="support-decoration decoration-two" />
-
-              <div className="support-feature-icon">
-                <HeartHandshake size={58} />
-              </div>
-
-              <div className="support-feature-small-icon">
-                <BookOpen size={27} />
-              </div>
-
-              <div className="support-feature-small-icon second">
-                <ShieldCheck size={27} />
-              </div>
-
-              <span className="support-visual-caption">
-                INFORMATION. EDUCATION. SUPPORT.
-              </span>
-            </div>
-
-            <div className="app-feature-info">
-              <span className="feature-number">FEATURE 03</span>
-
-              <div className="app-feature-title">
-                <div className="app-feature-mini-icon">
-                  <HeartHandshake size={20} />
-                </div>
-
-                <h3>Help & Educational Resources</h3>
-              </div>
-
-              <p>
-                Access educational information and discover reliable help
-                services and relevant support resources.
-              </p>
-
-              <div className="app-feature-line" />
-            </div>
-          </article>
+          <p>
+            DrinkAware combines education, awareness, community experiences and
+            access to support to encourage more informed decisions.
+          </p>
         </div>
       </div>
     </section>
@@ -513,28 +534,28 @@ function HowItWorks() {
       number: "01",
       title: "Get DrinkAware",
       description:
-        "Find out where the application is available and follow the official installation instructions.",
+        "Download and install the DrinkAware application using the official installation instructions.",
       icon: Download,
     },
     {
       number: "02",
-      title: "Open the Application",
+      title: "Learn & Play",
       description:
-        "Launch DrinkAware and explore the available application sections.",
-      icon: Smartphone,
+        "Explore educational materials and use BoozeConnect quizzes to test and reinforce your knowledge.",
+      icon: BookOpen,
     },
     {
       number: "03",
-      title: "Explore Information",
+      title: "Explore & Connect",
       description:
-        "Discover educational materials, safety guidance and awareness resources.",
+        "Discover the Marketplace, read real-life stories and access relevant information.",
       icon: Search,
     },
     {
       number: "04",
-      title: "Find Support",
+      title: "Get Help & Report",
       description:
-        "Explore available support information and identify appropriate services when needed.",
+        "Find relevant support contacts or anonymously report suspected illegal brewing activities.",
       icon: HeartHandshake,
     },
   ];
@@ -579,60 +600,6 @@ function HowItWorks() {
     </section>
   );
 }
-
-/* =========================================
-   SAFETY SECTION
-========================================= */
-
-function SafetySection() {
-  return (
-    <section className="safety-section section-padding">
-      <div className="section-container">
-        <div className="safety-card">
-          <div className="safety-content">
-            <span className="safety-label">YOUR SAFETY MATTERS</span>
-
-            <h2>
-              When it comes to drink safety,
-              <span> knowledge is important.</span>
-            </h2>
-
-            <p>
-              Alcoholic drinks from unregulated or unknown sources may contain
-              harmful substances. A drink that is not legally produced or
-              properly labelled should be treated with caution.
-            </p>
-
-            <div className="safety-message">
-              <ShieldAlert size={23} />
-
-              <span>
-                If you are unsure about the source or safety of a drink, the
-                safest choice is not to consume it.
-              </span>
-            </div>
-
-            <Link href="/about" className="safety-link">
-              Learn about DrinkAware
-              <ArrowRight size={18} />
-            </Link>
-          </div>
-
-          <div className="safety-visual">
-            <div className="safety-circle">
-              <div className="safety-inner">
-                <ShieldCheck size={85} strokeWidth={1.3} />
-              </div>
-            </div>
-
-            <span className="safety-visual-text">AWARENESS IS PROTECTION</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* =========================================
    DOWNLOAD SECTION
 ========================================= */
@@ -700,6 +667,11 @@ function FAQ() {
         "The application is intended for individuals who want to improve their understanding of alcohol-related safety risks and access relevant awareness information.",
     },
     {
+      question: "What features does DrinkAware offer?",
+      answer:
+        "DrinkAware offers six key features: Marketplace, Learning, BoozeConnect quizzes, Stories, Help and Support, and Anonymous Reporting of suspected illegal brewing activities.",
+    },
+    {
       question: "How do I download DrinkAware?",
       answer:
         "Visit the Download section of this website for official installation instructions and supported platform information. Download availability will be confirmed there.",
@@ -713,6 +685,11 @@ function FAQ() {
       question: "Can DrinkAware guarantee that a drink is safe?",
       answer:
         "No. The application provides awareness and educational information. It cannot chemically test drinks or guarantee that any alcoholic drink is safe to consume.",
+    },
+    {
+      question: "Can I report suspected illegal brewing?",
+      answer:
+        "Yes. DrinkAware includes an anonymous reporting feature that enables users to report suspected illegal brewing activities for appropriate follow-up by relevant authorities.",
     },
   ];
 
@@ -786,6 +763,7 @@ function Footer() {
 
           <div className="footer-column">
             <h4>Explore</h4>
+
             <Link href="#home">Home</Link>
             <Link href="/about">About Us</Link>
             <Link href="/features">Features</Link>
@@ -793,15 +771,17 @@ function Footer() {
 
           <div className="footer-column">
             <h4>Resources</h4>
-            <Link href="#download">Get the App</Link>
+
+            <Link href="/download">Get the App</Link>
             <Link href="/faqs">FAQs</Link>
             <Link href="/features">Safety Awareness</Link>
           </div>
 
           <div className="footer-column">
             <h4>Information</h4>
+
             <Link href="/about">Our Purpose</Link>
-            <Link href="#download">Installation Guide</Link>
+            <Link href="/download">Installation Guide</Link>
             <Link href="/faqs">Support Information</Link>
           </div>
         </div>
@@ -833,8 +813,6 @@ export default function Home() {
       <About />
 
       <Features />
-
-      <SafetySection />
 
       <DownloadSection />
 

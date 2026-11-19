@@ -89,7 +89,7 @@ export default function AboutPage() {
             <Link href="/faqs">FAQs</Link>
           </nav>
 
-          <Link href="/#download" className="about-nav-button">
+          <Link href="/download" className="about-nav-button">
             Explore the App <ArrowRight size={16} />
           </Link>
         </div>
@@ -458,7 +458,7 @@ export default function AboutPage() {
           <div className="about-footer-column">
             <h4>Discover</h4>
             <Link href="/faqs">FAQs</Link>
-            <Link href="/#download">Get the App</Link>
+            <Link href="/download">Get the App</Link>
             <Link href="/features">Safety Awareness</Link>
           </div>
         </div>

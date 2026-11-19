@@ -370,7 +370,7 @@ export default function FAQsPage() {
 
             <Link href="/faqs">FAQs</Link>
 
-            <Link href="/get-app">Get App</Link>
+            <Link href="/download">Get App</Link>
           </div>
 
           {/* LEGAL */}
