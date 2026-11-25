@@ -815,6 +815,8 @@ function Footer() {
             <Link href="/about">Our Purpose</Link>
             <Link href="/download">Installation Guide</Link>
             <Link href="/faqs">Support Information</Link>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms & Conditions</Link>
           </div>
         </div>
 

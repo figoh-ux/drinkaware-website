@@ -393,7 +393,7 @@ export default function FAQsPage() {
           <div className="footer-column">
             <h3>Legal</h3>
 
-            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="/privacy">Privacy Policy</Link>
 
             <Link href="/terms-and-conditions">Terms & Conditions</Link>
           </div>
