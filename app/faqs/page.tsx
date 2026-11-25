@@ -519,7 +519,7 @@ export default function FAQsPage() {
         {/* FOOTER BOTTOM */}
 
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} DrinkAware. All rights reserved.</p>
+          <p>© 2026 DrinkAware. All rights reserved.</p>
 
           <p>
             Making informed choices for a safer community. Powered by Figoh
