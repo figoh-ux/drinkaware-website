@@ -397,9 +397,24 @@ export default function AboutPage() {
 
       <section className="about-enactus section-padding">
         <div className="about-container enactus-grid">
-          <div className="enactus-icon">
-            <GraduationCap size={55} />
-            <span>STUDENT INNOVATION</span>
+          <div className="enactus-team-photo">
+            <Image
+              src="/enactus-cut-team.png"
+              alt="Enactus Chinhoyi University of Technology team behind the DrinkAware initiative"
+              width={700}
+              height={500}
+              style={{
+                width: "100%",
+                height: "100%",
+                minHeight: "350px",
+                objectFit: "cover",
+                borderRadius: "18px",
+              }}
+            />
+
+            <span className="enactus-photo-caption">
+              The Team Behind DrinkAware
+            </span>
           </div>
 
           <div className="enactus-content">

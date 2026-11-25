@@ -6659,3 +6659,83 @@ button {
     display: flex;
   }
 }
+
+/* ENACTUS CUT TEAM PHOTOGRAPH */
+
+.enactus-team-photo {
+  position: relative;
+  width: 100%;
+  min-height: 350px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #e8eeee;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.enactus-team-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.enactus-team-photo:hover img {
+  transform: scale(1.04);
+}
+
+.enactus-photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 22px 18px 18px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+
+/* ENACTUS SECTION LAYOUT */
+
+.enactus-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+}
+
+/* TABLET AND MOBILE */
+
+@media screen and (max-width: 900px) {
+  .enactus-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .enactus-team-photo {
+    min-height: 320px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .enactus-team-photo {
+    min-height: 250px;
+    border-radius: 14px;
+  }
+
+  .enactus-team-photo img {
+    min-height: 250px;
+  }
+
+  .enactus-photo-caption {
+    font-size: 14px;
+    padding: 18px 14px 14px;
+  }
+
+  .enactus-grid {
+    gap: 25px;
+  }
+}
