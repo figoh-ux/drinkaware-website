@@ -1,4 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
+import type { Metadata } from "next";
+
 import {
   ArrowRight,
   ShieldCheck,
@@ -10,14 +13,16 @@ import {
   ShoppingBag,
   Gamepad2,
   GraduationCap,
-  Users,
   CheckCircle2,
+  MessageSquareText,
+  Headset,
+  ShieldAlert,
 } from "lucide-react";
 
-export const metadata = {
-  title: "About Us",
+export const metadata: Metadata = {
+  title: "About Us | DrinkAware",
   description:
-    "Discover the purpose, mission and vision behind DrinkAware, an awareness-focused mobile application.",
+    "Discover the purpose, mission, vision and six application features behind DrinkAware, an awareness-focused mobile application developed through Enactus at Chinhoyi University of Technology.",
 };
 
 const objectives = [
@@ -37,7 +42,7 @@ const objectives = [
     icon: HeartHandshake,
     title: "Connect People to Support",
     description:
-      "Make information about relevant help services and rehabilitation resources easier to discover.",
+      "Make information about relevant help services, professional assistance and rehabilitation resources easier to discover.",
   },
 ];
 
@@ -47,21 +52,42 @@ const features = [
     number: "01",
     title: "Marketplace",
     description:
-      "Explore the Marketplace section within the DrinkAware application.",
+      "Explore the Marketplace section within the DrinkAware application as part of the wider digital experience.",
+  },
+  {
+    icon: BookOpen,
+    number: "02",
+    title: "Learning",
+    description:
+      "Access educational information about alcohol and substance abuse to improve understanding and encourage informed decisions.",
   },
   {
     icon: Gamepad2,
-    number: "02",
+    number: "03",
     title: "BoozeConnect Gaming",
     description:
-      "Engage with interactive gaming and quiz-based learning experiences designed to encourage awareness.",
+      "Engage with interactive games and quizzes designed to test knowledge, reinforce learning and make awareness more engaging.",
   },
   {
-    icon: HeartHandshake,
-    number: "03",
-    title: "Help & Education",
+    icon: MessageSquareText,
+    number: "04",
+    title: "Stories",
     description:
-      "Access educational information and discover reliable help and support resources.",
+      "Explore real-life experiences that encourage reflection, share different perspectives and promote informed choices.",
+  },
+  {
+    icon: Headset,
+    number: "05",
+    title: "Help & Support",
+    description:
+      "Discover relevant support contacts, professional assistance and rehabilitation resources for individuals who may need guidance.",
+  },
+  {
+    icon: ShieldAlert,
+    number: "06",
+    title: "Anonymous Reporting",
+    description:
+      "Report suspected illegal brewing activities through the anonymous reporting feature. Reports submitted through the application are sent to the Zimbabwe Republic Police (ZRP) for appropriate follow-up.",
   },
 ];
 
@@ -69,23 +95,33 @@ export default function AboutPage() {
   return (
     <main className="about-page">
       {/* NAVIGATION */}
+
       <header className="about-navbar">
         <div className="about-nav-container">
           <Link href="/" className="about-brand">
-            <span className="about-brand-icon">
-              <ShieldCheck size={23} />
-            </span>
-            <span>
-              Drink<span>Aware</span>
-            </span>
+            <Image
+              src="/drinkaware-logo.png"
+              alt="DrinkAware official logo"
+              width={180}
+              height={110}
+              priority
+              style={{
+                width: "170px",
+                height: "auto",
+                objectFit: "contain",
+              }}
+            />
           </Link>
 
           <nav className="about-nav-links">
             <Link href="/">Home</Link>
+
             <Link href="/about" className="active">
               About
             </Link>
+
             <Link href="/features">Features</Link>
+
             <Link href="/faqs">FAQs</Link>
           </nav>
 
@@ -96,6 +132,7 @@ export default function AboutPage() {
       </header>
 
       {/* HERO */}
+
       <section className="about-hero">
         <div className="about-hero-glow about-glow-one" />
         <div className="about-hero-glow about-glow-two" />
@@ -118,8 +155,8 @@ export default function AboutPage() {
           <p>
             DrinkAware is an awareness-focused mobile application designed to
             promote education about illicit and potentially unsafe alcoholic
-            drinks while making information and support resources easier to
-            access.
+            drinks while making information, interactive experiences and support
+            resources easier to access.
           </p>
 
           <div className="about-hero-actions">
@@ -140,6 +177,7 @@ export default function AboutPage() {
       </section>
 
       {/* OUR STORY */}
+
       <section className="about-story section-padding" id="our-story">
         <div className="about-container about-story-grid">
           <div className="about-story-visual">
@@ -165,6 +203,7 @@ export default function AboutPage() {
 
             <div className="story-floating-card">
               <BookOpen size={23} />
+
               <div>
                 <strong>Learn</strong>
                 <span>Access educational information</span>
@@ -189,8 +228,9 @@ export default function AboutPage() {
             <p>
               DrinkAware was developed as a mobile application initiative to
               help address this information gap. It brings together educational
-              content, interactive learning and access to relevant support
-              resources in one platform.
+              content, interactive learning, real-life stories, access to
+              relevant support resources and anonymous reporting in one
+              platform.
             </p>
 
             <p>
@@ -207,13 +247,16 @@ export default function AboutPage() {
       </section>
 
       {/* MISSION AND VISION */}
+
       <section className="about-purpose">
         <div className="about-container">
           <div className="about-centered-heading">
             <span className="about-section-label">OUR PURPOSE</span>
+
             <h2>
               What Drives <span>Us</span>
             </h2>
+
             <p>
               Our purpose is built around awareness, accessible knowledge and
               meaningful support.
@@ -257,6 +300,7 @@ export default function AboutPage() {
       </section>
 
       {/* OBJECTIVES */}
+
       <section className="about-objectives section-padding">
         <div className="about-container">
           <div className="about-centered-heading">
@@ -285,6 +329,7 @@ export default function AboutPage() {
                   </div>
 
                   <h3>{item.title}</h3>
+
                   <p>{item.description}</p>
                 </article>
               );
@@ -294,7 +339,8 @@ export default function AboutPage() {
       </section>
 
       {/* APPLICATION FEATURES */}
-      <section className="about-app-features">
+
+      <section className="about-app-features" id="app-features">
         <div className="about-container">
           <div className="about-feature-heading">
             <div>
@@ -305,13 +351,14 @@ export default function AboutPage() {
               <h2>
                 One Application.
                 <br />
-                <span>Three Core Features.</span>
+                <span>Six Key Features.</span>
               </h2>
             </div>
 
             <p>
-              DrinkAware brings together different experiences to support its
-              overall awareness and educational purpose.
+              DrinkAware brings together six features that support education,
+              interactive learning, real-life experiences, access to support and
+              community awareness.
             </p>
           </div>
 
@@ -327,19 +374,27 @@ export default function AboutPage() {
                   </div>
 
                   <h3>{feature.title}</h3>
+
                   <p>{feature.description}</p>
 
-                  <Link href="/#features">
-                    Learn more <ArrowRight size={16} />
+                  <Link href="/features">
+                    Explore feature <ArrowRight size={16} />
                   </Link>
                 </article>
               );
             })}
           </div>
+
+          <div className="about-all-features-link">
+            <Link href="/features" className="about-primary-button">
+              Discover All Six Features <ArrowRight size={17} />
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* ENACTUS CUT */}
+
       <section className="about-enactus section-padding">
         <div className="about-container enactus-grid">
           <div className="enactus-icon">
@@ -380,10 +435,12 @@ export default function AboutPage() {
       </section>
 
       {/* VALUES */}
+
       <section className="about-values">
         <div className="about-container">
           <div className="about-centered-heading">
             <span className="about-section-label">WHAT WE STAND FOR</span>
+
             <h2>
               Our Guiding <span>Values</span>
             </h2>
@@ -406,6 +463,7 @@ export default function AboutPage() {
       </section>
 
       {/* CALL TO ACTION */}
+
       <section className="about-cta">
         <div className="about-container about-cta-content">
           <div className="cta-icon">
@@ -421,7 +479,8 @@ export default function AboutPage() {
 
           <p>
             Discover the DrinkAware application and explore its educational
-            features, interactive experiences and support resources.
+            features, interactive experiences, real-life stories and support
+            resources.
           </p>
 
           <Link href="/features" className="about-primary-button">
@@ -431,16 +490,22 @@ export default function AboutPage() {
       </section>
 
       {/* FOOTER */}
+
       <footer className="about-footer">
         <div className="about-container about-footer-main">
           <div className="about-footer-brand">
-            <Link href="/" className="about-brand">
-              <span className="about-brand-icon">
-                <ShieldCheck size={22} />
-              </span>
-              <span>
-                Drink<span>Aware</span>
-              </span>
+            <Link href="/" className="about-footer-logo">
+              <Image
+                src="/drinkaware-logo.png"
+                alt="DrinkAware official logo"
+                width={170}
+                height={100}
+                style={{
+                  width: "150px",
+                  height: "auto",
+                  objectFit: "contain",
+                }}
+              />
             </Link>
 
             <p>
@@ -450,6 +515,7 @@ export default function AboutPage() {
 
           <div className="about-footer-column">
             <h4>Explore</h4>
+
             <Link href="/">Home</Link>
             <Link href="/about">About Us</Link>
             <Link href="/features">App Features</Link>
@@ -457,6 +523,7 @@ export default function AboutPage() {
 
           <div className="about-footer-column">
             <h4>Discover</h4>
+
             <Link href="/faqs">FAQs</Link>
             <Link href="/download">Get the App</Link>
             <Link href="/features">Safety Awareness</Link>
@@ -465,6 +532,7 @@ export default function AboutPage() {
 
         <div className="about-container about-footer-bottom">
           <p>© 2026 DrinkAware. All rights reserved.</p>
+
           <p>Powered by Figoh Technologies.</p>
         </div>
       </footer>

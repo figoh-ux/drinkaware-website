@@ -72,13 +72,19 @@ function Navbar() {
     <header className="navbar">
       <div className="nav-container">
         <Link href="/" className="brand">
-          <div className="brand-icon">
-            <ShieldCheck size={25} />
-          </div>
-
-          <span>
-            Drink<span className="brand-highlight">Aware</span>
-          </span>
+          <Image
+            src="/drinkaware-logo.png"
+            alt="DrinkAware Logo"
+            width={65}
+            height={65}
+            priority
+            style={{
+              width: "65px",
+              height: "65px",
+              objectFit: "contain",
+              display: "block",
+            }}
+          />
         </Link>
 
         <nav className="desktop-nav">
@@ -432,7 +438,8 @@ function Features() {
       description:
         "Access educational information on alcohol and substance abuse. Learn about associated risks, improve your understanding and make more informed decisions.",
       icon: BookOpen,
-      hasImage: false,
+      image: "/learning.png",
+      hasImage: true,
     },
     {
       number: "03",
@@ -458,7 +465,8 @@ function Features() {
       description:
         "Discover relevant support contacts, assistance services and professional resources for individuals seeking guidance and help.",
       icon: Headset,
-      hasImage: false,
+      image: "/help-support.png",
+      hasImage: true,
     },
     {
       number: "06",
@@ -778,13 +786,18 @@ function Footer() {
         <div className="footer-main">
           <div className="footer-brand">
             <Link href="/" className="brand footer-logo">
-              <div className="brand-icon">
-                <ShieldCheck size={24} />
-              </div>
-
-              <span>
-                Drink<span className="brand-highlight">Aware</span>
-              </span>
+              <Image
+                src="/drinkaware-logo.png"
+                alt="DrinkAware Logo"
+                width={95}
+                height={95}
+                style={{
+                  width: "95px",
+                  height: "95px",
+                  objectFit: "contain",
+                  display: "block",
+                }}
+              />
             </Link>
 
             <p>

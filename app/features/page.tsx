@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
+import type { LucideIcon } from "lucide-react";
 
 import {
   ArrowRight,
@@ -49,10 +50,25 @@ export const metadata: Metadata = {
 };
 
 /* =========================================
+   FEATURE TYPE
+========================================= */
+
+type Feature = {
+  number: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  image?: string;
+  imageAlt?: string;
+  icon: LucideIcon;
+  points: string[];
+};
+
+/* =========================================
    APPLICATION FEATURES
 ========================================= */
 
-const features = [
+const features: Feature[] = [
   {
     number: "01",
     title: "Marketplace",
@@ -80,6 +96,10 @@ const features = [
 
     description:
       "DrinkAware provides educational information on alcohol and substance abuse. Users can explore useful learning materials to improve their understanding of associated risks and make more informed decisions.",
+
+    image: "/learning.png",
+    imageAlt:
+      "DrinkAware Learning section showing educational information about alcohol awareness",
 
     icon: BookOpen,
 
@@ -135,6 +155,10 @@ const features = [
     description:
       "DrinkAware helps connect users to relevant support contacts and professional assistance. The feature aims to make useful support information easier to discover for individuals who may need guidance.",
 
+    image: "/help-support.png",
+    imageAlt:
+      "DrinkAware Help and Support section showing available support resources",
+
     icon: Headset,
 
     points: [
@@ -150,14 +174,14 @@ const features = [
     subtitle: "Supporting awareness and community safety",
 
     description:
-      "The anonymous reporting feature enables users to report suspected illegal brewing activities. Reports can be made without publicly identifying the person submitting them, allowing relevant authorities to receive information for appropriate follow-up.",
+      "The anonymous reporting feature enables users to report suspected illegal brewing activities. Reports are sent to the Zimbabwe Republic Police (ZRP) for appropriate follow-up.",
 
     icon: ShieldAlert,
 
     points: [
       "Anonymous reporting facility",
       "Report suspected illegal brewing activities",
-      "Information for appropriate authority follow-up",
+      "Reports submitted to the Zimbabwe Republic Police (ZRP)",
     ],
   },
 ];
@@ -166,7 +190,7 @@ const features = [
    FEATURE VISUAL
 ========================================= */
 
-function FeatureVisual({ feature }: { feature: (typeof features)[number] }) {
+function FeatureVisual({ feature }: { feature: Feature }) {
   const Icon = feature.icon;
 
   return (
@@ -219,14 +243,19 @@ export default function FeaturesPage() {
 
       <nav className="features-nav">
         <Link href="/" className="features-brand">
-          <span className="features-brand-icon">
-            <ShieldCheck size={24} />
-          </span>
-
-          <span>
-            Drink<span>Aware</span>
-            <small>Awareness. Knowledge. Safer Choices.</small>
-          </span>
+          <Image
+            src="/drinkaware-logo.png"
+            alt="DrinkAware Logo"
+            width={65}
+            height={65}
+            priority
+            style={{
+              width: "65px",
+              height: "65px",
+              objectFit: "contain",
+              display: "block",
+            }}
+          />
         </Link>
 
         <div className="features-nav-links">
@@ -335,11 +364,7 @@ export default function FeaturesPage() {
               }`}
               key={feature.number}
             >
-              {/* FEATURE IMAGE OR ILLUSTRATION */}
-
               <FeatureVisual feature={feature} />
-
-              {/* FEATURE INFORMATION */}
 
               <div className="feature-detail-content">
                 <span className="feature-number">{feature.number}</span>
@@ -425,7 +450,18 @@ export default function FeaturesPage() {
 
       <footer className="features-footer">
         <Link href="/" className="features-footer-brand">
-          Drink<span>Aware</span>
+          <Image
+            src="/drinkaware-logo.png"
+            alt="DrinkAware Logo"
+            width={95}
+            height={95}
+            style={{
+              width: "95px",
+              height: "95px",
+              objectFit: "contain",
+              display: "block",
+            }}
+          />
         </Link>
 
         <p>Awareness. Knowledge. Safer Choices.</p>

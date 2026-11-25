@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
-  ShieldCheck,
   ArrowLeft,
   LockKeyhole,
   FileText,
   ShieldAlert,
   HeartHandshake,
-  Mail,
   MessageCircle,
+  ShieldCheck,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -24,13 +24,19 @@ export default function PrivacyPage() {
       <header className="legal-header">
         <div className="legal-header-inner">
           <Link href="/" className="brand">
-            <div className="brand-icon">
-              <ShieldCheck size={25} />
-            </div>
-
-            <span>
-              Drink<span className="brand-highlight">Aware</span>
-            </span>
+            <Image
+              src="/drinkaware-logo.png"
+              alt="DrinkAware Logo"
+              width={65}
+              height={65}
+              priority
+              style={{
+                width: "65px",
+                height: "65px",
+                objectFit: "contain",
+                display: "block",
+              }}
+            />
           </Link>
 
           <Link href="/" className="legal-back-link">
@@ -663,6 +669,21 @@ export default function PrivacyPage() {
       {/* FOOTER */}
       <footer className="legal-footer">
         <div className="legal-footer-inner">
+          <Link href="/" aria-label="DrinkAware Home">
+            <Image
+              src="/drinkaware-logo.png"
+              alt="DrinkAware Logo"
+              width={95}
+              height={95}
+              style={{
+                width: "95px",
+                height: "95px",
+                objectFit: "contain",
+                display: "block",
+              }}
+            />
+          </Link>
+
           <p>
             © 2026 DrinkAware. All rights reserved.Powered by Figoh technologies
           </p>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 const faqCategories = [
@@ -11,7 +12,7 @@ const faqCategories = [
       {
         question: "What is DrinkAware?",
         answer:
-          "DrinkAware is an educational and awareness platform developed to promote informed decisions about alcohol consumption, raise awareness about illicit and unsafe alcoholic drinks, and connect people with reliable information and support services.",
+          "DrinkAware is an educational and awareness platform developed by Enactus CUT Zimbabwe. It promotes informed decisions about alcohol consumption, raises awareness about illicit and unsafe alcoholic drinks, and connects people with reliable information and support services.",
       },
       {
         question: "What is the main purpose of DrinkAware?",
@@ -27,6 +28,11 @@ const faqCategories = [
         question: "Is DrinkAware a rehabilitation centre?",
         answer:
           "No. DrinkAware is an awareness and information platform. It helps users access educational information and discover available support services. It does not replace professional medical care or rehabilitation services.",
+      },
+      {
+        question: "Who developed DrinkAware?",
+        answer:
+          "DrinkAware is an Enactus project associated with Chinhoyi University of Technology (CUT), Zimbabwe. It aims to use innovation and community engagement to promote alcohol awareness and safer communities.",
       },
     ],
   },
@@ -46,14 +52,14 @@ const faqCategories = [
           "The Marketplace is a dedicated section within the DrinkAware application. Users can explore the available marketplace interface and its features.",
       },
       {
-        question: "What is BoozeConnect Gaming?",
-        answer:
-          "BoozeConnect is the interactive gaming and quiz section of DrinkAware. It provides an engaging way for users to participate in quizzes while learning about alcohol awareness and safety.",
-      },
-      {
         question: "What is the Learning feature?",
         answer:
           "The Learning feature provides educational information about alcohol and substance abuse. It helps users improve their understanding of associated risks and make informed decisions.",
+      },
+      {
+        question: "What is BoozeConnect?",
+        answer:
+          "BoozeConnect is the interactive gaming and quiz section of DrinkAware. It provides an engaging way for users to participate in quizzes while learning about alcohol awareness and safety.",
       },
       {
         question: "What is the Stories feature?",
@@ -63,12 +69,12 @@ const faqCategories = [
       {
         question: "Can I access help through DrinkAware?",
         answer:
-          "Yes. DrinkAware provides access to information about reliable help services and professional assistance. Users can explore these resources to learn more about available support options.",
+          "Yes. The Help & Support feature provides access to information about reliable help services, professional assistance and available rehabilitation resources.",
       },
       {
         question: "Can I report suspected illegal brewing?",
         answer:
-          "Yes. The Anonymous Reporting feature allows users to report suspected illegal brewing activities for appropriate follow-up by relevant authorities.",
+          "Yes. DrinkAware has an Anonymous Reporting feature that allows users to report suspected illegal brewing activities. Reports submitted through the application are sent to the Zimbabwe Republic Police (ZRP) for appropriate follow-up.",
       },
     ],
   },
@@ -97,6 +103,11 @@ const faqCategories = [
         answer:
           "Do not consume it. Avoid tasting or testing the drink yourself. If someone has consumed a potentially contaminated alcoholic beverage, seek urgent medical attention, even if symptoms have not yet appeared.",
       },
+      {
+        question: "Can I determine whether alcohol is safe by looking at it?",
+        answer:
+          "No. Appearance, smell or packaging alone cannot guarantee that an alcoholic beverage is safe. If you are uncertain about its source or legality, the safest option is not to drink it.",
+      },
     ],
   },
 
@@ -107,7 +118,7 @@ const faqCategories = [
       {
         question: "Where can I get additional assistance?",
         answer:
-          "You can explore the help and educational resources available within DrinkAware. You can also contact our team through WhatsApp for general enquiries about the platform.",
+          "You can explore the Help & Support section within DrinkAware to find information about available support services and rehabilitation resources. You can also contact our team through WhatsApp for general enquiries about the platform.",
       },
       {
         question: "Can I contact the DrinkAware team directly?",
@@ -119,6 +130,43 @@ const faqCategories = [
         answer:
           "Yes. Contact our team through WhatsApp and explain the problem you are experiencing. Providing details about the issue will help us understand your concern.",
       },
+      {
+        question: "Does DrinkAware provide medical treatment?",
+        answer:
+          "No. DrinkAware provides educational information and helps users discover support resources. It does not diagnose medical conditions, provide emergency treatment or replace qualified healthcare professionals.",
+      },
+    ],
+  },
+
+  {
+    title: "Anonymous Reporting",
+    icon: "📢",
+    questions: [
+      {
+        question: "How does Anonymous Reporting work?",
+        answer:
+          "The Anonymous Reporting feature allows users to submit reports about suspected illegal brewing activities through the DrinkAware application.",
+      },
+      {
+        question: "Who receives the reports?",
+        answer:
+          "Reports submitted through the DrinkAware application's Anonymous Reporting feature are sent to the Zimbabwe Republic Police (ZRP) for appropriate follow-up.",
+      },
+      {
+        question: "Does DrinkAware investigate reported activities?",
+        answer:
+          "No. DrinkAware provides a reporting channel, but it does not conduct police investigations. The relevant authorities are responsible for assessing reports and deciding on any appropriate action.",
+      },
+      {
+        question: "Is my report completely anonymous?",
+        answer:
+          "The feature is designed to support anonymous reporting. However, users should review the DrinkAware Privacy Policy for information about how submitted information is handled. Avoid including personal identifying information if you do not wish to disclose it.",
+      },
+      {
+        question: "What should I include in a report?",
+        answer:
+          "Provide clear and truthful information about the suspected activity. Do not make false accusations, attempt to investigate suspected illegal activities yourself or put your safety at risk.",
+      },
     ],
   },
 ];
@@ -128,7 +176,8 @@ export default function FAQsPage() {
 
   const [openQuestion, setOpenQuestion] = useState<number | null>(0);
 
-  // CHANGE THE WHATSAPP NUMBER HERE
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const whatsappNumber = "263788710818";
 
   const whatsappMessage =
@@ -148,15 +197,25 @@ export default function FAQsPage() {
 
       <header className="faq-navbar">
         <div className="faq-nav-container">
-          <Link href="/" className="faq-logo">
-            Drink<span>Aware</span>
+          <Link href="/" className="faq-logo" aria-label="DrinkAware homepage">
+            <Image
+              src="/drinkaware-logo.png"
+              alt="DrinkAware Logo"
+              width={65}
+              height={65}
+              priority
+              style={{
+                width: "65px",
+                height: "65px",
+                objectFit: "contain",
+                display: "block",
+              }}
+            />
           </Link>
 
           <nav className="faq-nav-links">
             <Link href="/">Home</Link>
-
             <Link href="/about">About</Link>
-
             <Link href="/features">Features</Link>
 
             <Link href="/faqs" className="active">
@@ -167,7 +226,40 @@ export default function FAQsPage() {
               Get App
             </Link>
           </nav>
+
+          <button
+            className="faq-menu-toggle"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? "✕" : "☰"}
+          </button>
         </div>
+
+        {mobileMenuOpen && (
+          <nav className="faq-mobile-menu">
+            <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+              Home
+            </Link>
+
+            <Link href="/about" onClick={() => setMobileMenuOpen(false)}>
+              About
+            </Link>
+
+            <Link href="/features" onClick={() => setMobileMenuOpen(false)}>
+              Features
+            </Link>
+
+            <Link href="/faqs" onClick={() => setMobileMenuOpen(false)}>
+              FAQs
+            </Link>
+
+            <Link href="/download" onClick={() => setMobileMenuOpen(false)}>
+              Get App
+            </Link>
+          </nav>
+        )}
       </header>
 
       <main className="faq-page">
@@ -194,7 +286,6 @@ export default function FAQsPage() {
 
           <div className="hero-decoration">
             <div className="decoration-circle circle-one"></div>
-
             <div className="decoration-circle circle-two"></div>
 
             <div className="hero-icon">
@@ -229,6 +320,7 @@ export default function FAQsPage() {
                 {faqCategories.map((category) => (
                   <button
                     key={category.title}
+                    type="button"
                     className={`category-button ${
                       activeCategory === category.title ? "active" : ""
                     }`}
@@ -236,6 +328,7 @@ export default function FAQsPage() {
                       setActiveCategory(category.title);
                       setOpenQuestion(0);
                     }}
+                    aria-pressed={activeCategory === category.title}
                   >
                     <span className="category-icon">{category.icon}</span>
 
@@ -269,6 +362,7 @@ export default function FAQsPage() {
                     key={item.question}
                   >
                     <button
+                      type="button"
                       className="faq-question"
                       onClick={() =>
                         setOpenQuestion(openQuestion === index ? null : index)
@@ -277,7 +371,7 @@ export default function FAQsPage() {
                     >
                       <span>{item.question}</span>
 
-                      <span className="faq-toggle">
+                      <span className="faq-toggle" aria-hidden="true">
                         {openQuestion === index ? "−" : "+"}
                       </span>
                     </button>
@@ -362,8 +456,23 @@ export default function FAQsPage() {
           {/* BRAND */}
 
           <div className="footer-brand">
-            <Link href="/" className="footer-logo">
-              Drink<span>Aware</span>
+            <Link
+              href="/"
+              className="footer-logo"
+              aria-label="DrinkAware homepage"
+            >
+              <Image
+                src="/drinkaware-logo.png"
+                alt="DrinkAware Logo"
+                width={95}
+                height={95}
+                style={{
+                  width: "95px",
+                  height: "95px",
+                  objectFit: "contain",
+                  display: "block",
+                }}
+              />
             </Link>
 
             <p>
@@ -378,13 +487,9 @@ export default function FAQsPage() {
             <h3>Explore</h3>
 
             <Link href="/">Home</Link>
-
             <Link href="/about">About</Link>
-
             <Link href="/features">Features</Link>
-
             <Link href="/faqs">FAQs</Link>
-
             <Link href="/download">Get App</Link>
           </div>
 
@@ -395,7 +500,7 @@ export default function FAQsPage() {
 
             <Link href="/privacy">Privacy Policy</Link>
 
-            <Link href="/terms-and-conditions">Terms & Conditions</Link>
+            <Link href="/terms">Terms & Conditions</Link>
           </div>
 
           {/* CONTACT */}
@@ -414,7 +519,7 @@ export default function FAQsPage() {
         {/* FOOTER BOTTOM */}
 
         <div className="footer-bottom">
-          <p>© DrinkAware. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} DrinkAware. All rights reserved.</p>
 
           <p>
             Making informed choices for a safer community. Powered by Figoh

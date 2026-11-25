@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowLeft,
-  ShieldCheck,
   BookOpen,
   Gamepad2,
   HeartHandshake,
   FileText,
   Store,
   AlertTriangle,
-  Scale,
-  Mail,
+  ShieldCheck,
   MessageCircle,
   ExternalLink,
 } from "lucide-react";
@@ -28,8 +27,19 @@ export default function TermsPage() {
       <header className="legal-header">
         <div className="legal-header-inner">
           <Link href="/" className="legal-brand">
-            <ShieldCheck size={30} />
-            <span>DrinkAware</span>
+            <Image
+              src="/drinkaware-logo.png"
+              alt="DrinkAware Logo"
+              width={65}
+              height={65}
+              priority
+              style={{
+                width: "65px",
+                height: "65px",
+                objectFit: "contain",
+                display: "block",
+              }}
+            />
           </Link>
 
           <Link href="/" className="legal-back-link">
@@ -566,7 +576,21 @@ export default function TermsPage() {
       {/* Footer */}
       <footer className="legal-footer">
         <div>
-          <Link href="/">DrinkAware</Link>
+          <Link href="/" aria-label="DrinkAware Home">
+            <Image
+              src="/drinkaware-logo.png"
+              alt="DrinkAware Logo"
+              width={95}
+              height={95}
+              style={{
+                width: "95px",
+                height: "95px",
+                objectFit: "contain",
+                display: "block",
+              }}
+            />
+          </Link>
+
           <p>Promoting awareness. Encouraging informed choices.</p>
         </div>
 
@@ -577,8 +601,8 @@ export default function TermsPage() {
         </div>
 
         <p className="legal-copyright">
-          © 2026 DrinkAware | Enactus CUT Zimbabwe. All
-          rights reserved. Powered by figoh technologies
+          © 2026 DrinkAware | Enactus CUT Zimbabwe. All rights reserved. Powered
+          by figoh technologies
         </p>
       </footer>
     </main>

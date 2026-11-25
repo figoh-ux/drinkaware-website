@@ -25,15 +25,25 @@ function Navbar() {
   return (
     <header className="navbar">
       <div className="nav-container">
-        <Link href="/" className="brand">
-          <div className="brand-icon">
-            <ShieldCheck size={25} />
-          </div>
+        {/* OFFICIAL DRINKAWARE LOGO */}
 
-          <span>
-            Drink<span className="brand-highlight">Aware</span>
-          </span>
+        <Link href="/" className="brand">
+          <Image
+            src="/drinkaware-logo.png"
+            alt="DrinkAware official logo"
+            width={65}
+            height={65}
+            priority
+            style={{
+              width: "65px",
+              height: "65px",
+              objectFit: "contain",
+              display: "block",
+            }}
+          />
         </Link>
+
+        {/* DESKTOP NAVIGATION */}
 
         <nav className="desktop-nav">
           <Link href="/" className="nav-link">
@@ -56,6 +66,8 @@ function Navbar() {
         <Link href="/download" className="nav-cta">
           Get the App <ArrowRight size={16} />
         </Link>
+
+        {/* MOBILE NAVIGATION */}
 
         <details className="mobile-menu">
           <summary aria-label="Open navigation menu">
@@ -94,7 +106,7 @@ export default function DownloadPage() {
     {
       icon: Gamepad2,
       title: "BoozeConnect",
-      description: "Test your knowledge through interactive quizzes.",
+      description: "Test your knowledge through interactive quizzes and games.",
     },
     {
       icon: MessageSquareText,
@@ -109,7 +121,8 @@ export default function DownloadPage() {
     {
       icon: ShieldAlert,
       title: "Anonymous Reporting",
-      description: "Report suspected illegal brewing activities.",
+      description:
+        "Report suspected illegal brewing activities. Reports submitted through the application are sent to the Zimbabwe Republic Police (ZRP).",
     },
   ];
 
@@ -158,6 +171,8 @@ export default function DownloadPage() {
               <span>Learn more. Stay informed. Make informed choices.</span>
             </div>
           </div>
+
+          {/* APPLICATION IMAGE */}
 
           <div className="download-hero-image">
             <div className="download-image-glow" />
@@ -354,14 +369,19 @@ function Footer() {
           {/* BRAND */}
 
           <div className="footer-brand">
-            <Link href="/" className="brand footer-logo">
-              <div className="brand-icon">
-                <ShieldCheck size={24} />
-              </div>
-
-              <span>
-                Drink<span className="brand-highlight">Aware</span>
-              </span>
+            <Link href="/" className="footer-logo">
+              <Image
+                src="/drinkaware-logo.png"
+                alt="DrinkAware official logo"
+                width={95}
+                height={95}
+                style={{
+                  width: "95px",
+                  height: "95px",
+                  objectFit: "contain",
+                  display: "block",
+                }}
+              />
             </Link>
 
             <p>
@@ -406,7 +426,7 @@ function Footer() {
 
           <span>
             Knowledge. Awareness. Informed Choices. Powered by Figoh
-            Technologies
+            Technologies.
           </span>
         </div>
       </div>

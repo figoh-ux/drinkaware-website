@@ -6616,3 +6616,46 @@ button {
     width: 100%;
   }
 }
+
+/* FAQ MOBILE MENU BUTTON */
+
+/* Hide hamburger menu on tablets, laptops and desktops */
+.faq-menu-toggle {
+  display: none;
+}
+
+/* Show hamburger menu only on mobile phones */
+@media screen and (max-width: 767px) {
+  .faq-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: inherit;
+    padding: 8px;
+  }
+
+  .faq-nav-links {
+    display: none;
+  }
+
+  .faq-mobile-menu {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Keep normal navigation visible on larger screens */
+@media screen and (min-width: 768px) {
+  .faq-menu-toggle,
+  .faq-mobile-menu {
+    display: none !important;
+  }
+
+  .faq-nav-links {
+    display: flex;
+  }
+}
