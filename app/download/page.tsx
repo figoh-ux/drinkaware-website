@@ -15,6 +15,11 @@ import {
   Info,
   CheckCircle2,
   Menu,
+  MessageCircle,
+  Wifi,
+  HardDrive,
+  RefreshCw,
+  Smartphone as PhoneIcon,
 } from "lucide-react";
 
 /* =========================================
@@ -126,6 +131,90 @@ export default function DownloadPage() {
     },
   ];
 
+  const installationSteps = [
+    {
+      number: "01",
+      title: "Open Google Play Store",
+      description:
+        "Unlock your Android smartphone and open the Google Play Store application.",
+    },
+    {
+      number: "02",
+      title: "Search for DrinkAware",
+      description:
+        "Tap the search bar and type DrinkAware to find the official application.",
+    },
+    {
+      number: "03",
+      title: "Select the official application",
+      description:
+        "Check the application name and developer information to make sure you have selected the official DrinkAware app.",
+    },
+    {
+      number: "04",
+      title: "Tap Install",
+      description:
+        "Select the Install button and wait for Google Play Store to download and install the application.",
+    },
+    {
+      number: "05",
+      title: "Open DrinkAware",
+      description:
+        "Once installation is complete, tap Open or locate the DrinkAware icon on your phone.",
+    },
+    {
+      number: "06",
+      title: "Start exploring",
+      description:
+        "Follow the introductory instructions and explore the available DrinkAware features.",
+    },
+  ];
+
+  const troubleshooting = [
+    {
+      icon: Wifi,
+      title: "Download problems",
+      description:
+        "Check your internet connection and try downloading the application again.",
+    },
+    {
+      icon: RefreshCw,
+      title: "Slow downloads",
+      description:
+        "Switch to a more stable internet connection and retry the download.",
+    },
+    {
+      icon: HardDrive,
+      title: "Insufficient storage",
+      description:
+        "Check your phone's available storage and free up space if necessary.",
+    },
+    {
+      icon: PhoneIcon,
+      title: "Installation problems",
+      description:
+        "Check whether your Android device meets the application's requirements.",
+    },
+    {
+      icon: Smartphone,
+      title: "Application won't open",
+      description:
+        "Restart your phone and try opening DrinkAware again. Check whether an application update is available.",
+    },
+    {
+      icon: Info,
+      title: "Application errors",
+      description:
+        "Check your internet connection. If the problem continues, contact our development team.",
+    },
+  ];
+
+  const whatsappMessage = encodeURIComponent(
+    "Hello Enactus Development Team. I need assistance with the DrinkAware application. My enquiry is:",
+  );
+
+  const whatsappLink = `https://wa.me/263788710818?text=${whatsappMessage}`;
+
   return (
     <main className="download-page">
       {/* NAVIGATION */}
@@ -207,8 +296,8 @@ export default function DownloadPage() {
             </h2>
 
             <p>
-              Find out how to access and install the DrinkAware mobile
-              application.
+              DrinkAware will be available through Google Play Store once the
+              application has completed the approval process.
             </p>
           </div>
 
@@ -220,22 +309,31 @@ export default function DownloadPage() {
             <div className="availability-content">
               <span className="availability-badge">
                 <Info size={15} />
-                DOWNLOAD INFORMATION
+                GOOGLE PLAY APPROVAL PENDING
               </span>
 
-              <h3>Official download details coming soon.</h3>
+              <h3>Coming soon to Google Play Store.</h3>
 
               <p>
-                Official installation instructions and the verified application
-                download link will be published here once availability has been
-                confirmed.
+                DrinkAware is being prepared for release on Google Play Store.
+                The official download link will be published on this page once
+                the application has been approved and made publicly available.
               </p>
 
               <div className="availability-note">
                 <ShieldCheck size={20} />
 
-                <span>Always use official DrinkAware download sources.</span>
+                <span>
+                  Always download DrinkAware from its official distribution
+                  source.
+                </span>
               </div>
+
+              <p style={{ marginTop: "18px", fontWeight: 600 }}>
+                Platform: Android
+              </p>
+
+              <p style={{ marginTop: "6px" }}>iOS availability: Coming soon.</p>
             </div>
           </div>
         </div>
@@ -286,42 +384,302 @@ export default function DownloadPage() {
         </div>
       </section>
 
-      {/* INSTALLATION INFORMATION */}
+      {/* ANDROID INSTALLATION GUIDE */}
 
       <section className="download-install-section">
         <div className="download-container">
+          <div className="download-section-heading">
+            <span className="download-label">ANDROID INSTALLATION GUIDE</span>
+
+            <h2>
+              How to install
+              <span> DrinkAware.</span>
+            </h2>
+
+            <p>
+              Follow these simple steps to download and install DrinkAware
+              directly from Google Play Store once the application is publicly
+              available.
+            </p>
+          </div>
+
           <div className="download-install-card">
             <div className="install-icon">
               <Download size={35} />
             </div>
 
             <div className="install-content">
-              <span className="download-label">INSTALLATION GUIDE</span>
+              <span className="download-label">STEP-BY-STEP GUIDE</span>
 
-              <h2>Getting started will be simple.</h2>
+              <h2>Getting started is simple.</h2>
 
               <p>
-                Once the official application release is available, this section
-                will provide step-by-step installation instructions for
-                supported devices.
+                You will be able to install DrinkAware on your Android
+                smartphone by following these steps:
+              </p>
+
+              <div
+                className="install-points"
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
+                  gap: "22px",
+                  marginTop: "25px",
+                }}
+              >
+                {installationSteps.map((step) => (
+                  <div
+                    key={step.number}
+                    style={{
+                      display: "flex",
+                      alignItems: "flex-start",
+                      gap: "14px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        minWidth: "42px",
+                        height: "42px",
+                        borderRadius: "50%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontWeight: 700,
+                        fontSize: "14px",
+                      }}
+                    >
+                      {step.number}
+                    </div>
+
+                    <div>
+                      <h3 style={{ marginBottom: "7px" }}>{step.title}</h3>
+
+                      <p>{step.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="availability-note" style={{ marginTop: "25px" }}>
+                <Info size={20} />
+
+                <span>
+                  These instructions will become applicable once DrinkAware is
+                  approved and publicly available on Google Play Store.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* DEVICE REQUIREMENTS */}
+
+      <section className="download-benefits-section">
+        <div className="download-container">
+          <div className="download-section-heading">
+            <span className="download-label">DEVICE INFORMATION</span>
+
+            <h2>
+              What you need
+              <span> to get started.</span>
+            </h2>
+
+            <p>
+              Make sure your device is ready before installing the DrinkAware
+              application.
+            </p>
+          </div>
+
+          <div className="download-benefits-grid">
+            <article className="download-benefit-card">
+              <div className="download-benefit-icon">
+                <Smartphone size={25} />
+              </div>
+
+              <h3>Android Smartphone</h3>
+
+              <p>
+                DrinkAware currently supports Android smartphones. The minimum
+                supported Android version will be confirmed before release.
+              </p>
+            </article>
+
+            <article className="download-benefit-card">
+              <div className="download-benefit-icon">
+                <Download size={25} />
+              </div>
+
+              <h3>Google Play Store</h3>
+
+              <p>
+                A Google account and access to Google Play Store are required to
+                download the application through the official store.
+              </p>
+            </article>
+
+            <article className="download-benefit-card">
+              <div className="download-benefit-icon">
+                <Info size={25} />
+              </div>
+
+              <h3>Internet Connection</h3>
+
+              <p>
+                An internet connection is required for online application
+                features and access to online resources.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* TROUBLESHOOTING AND TECHNICAL SUPPORT */}
+
+      <section className="download-install-section">
+        <div className="download-container">
+          <div className="download-section-heading">
+            <span className="download-label">TECHNICAL SUPPORT</span>
+
+            <h2>
+              Need help with
+              <span> DrinkAware?</span>
+            </h2>
+
+            <p>
+              Find solutions to common installation and application problems. If
+              you still need assistance, our Enactus Development Team is
+              available to help.
+            </p>
+          </div>
+
+          {/* COMMON PROBLEMS */}
+
+          <div className="download-install-card">
+            <div className="install-icon">
+              <Info size={35} />
+            </div>
+
+            <div className="install-content">
+              <span className="download-label">
+                COMMON PROBLEMS & SOLUTIONS
+              </span>
+
+              <h2>Quick troubleshooting guide.</h2>
+
+              <p>
+                If you experience difficulties while downloading, installing or
+                using DrinkAware, try the following solutions.
+              </p>
+
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
+                  gap: "25px",
+                  marginTop: "28px",
+                }}
+              >
+                {troubleshooting.map((item) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <div
+                      key={item.title}
+                      style={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        gap: "14px",
+                      }}
+                    >
+                      <div className="download-benefit-icon">
+                        <Icon size={22} />
+                      </div>
+
+                      <div>
+                        <h3 style={{ marginBottom: "8px" }}>{item.title}</h3>
+
+                        <p>{item.description}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* WHATSAPP DEVELOPMENT TEAM SUPPORT */}
+
+          <div className="download-install-card" style={{ marginTop: "30px" }}>
+            <div className="install-icon">
+              <Headset size={35} />
+            </div>
+
+            <div className="install-content">
+              <span className="download-label">ENACTUS DEVELOPMENT TEAM</span>
+
+              <h2>Still need assistance?</h2>
+
+              <p>
+                Our Enactus Development Team is available to assist with
+                DrinkAware-related enquiries. Whether you are experiencing
+                installation difficulties, technical problems, application
+                errors or need clarification about any of the features, we would
+                be happy to hear from you.
               </p>
 
               <div className="install-points">
                 <div>
                   <CheckCircle2 size={19} />
-                  <span>Official download instructions</span>
+                  <span>Application installation assistance</span>
                 </div>
 
                 <div>
                   <CheckCircle2 size={19} />
-                  <span>Supported device information</span>
+                  <span>Technical problems and application errors</span>
                 </div>
 
                 <div>
                   <CheckCircle2 size={19} />
-                  <span>Installation guidance</span>
+                  <span>Questions about application features</span>
+                </div>
+
+                <div>
+                  <CheckCircle2 size={19} />
+                  <span>Bug reports and suggestions</span>
+                </div>
+
+                <div>
+                  <CheckCircle2 size={19} />
+                  <span>General DrinkAware enquiries</span>
                 </div>
               </div>
+
+              <div style={{ marginTop: "28px" }}>
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="download-primary-btn"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "10px",
+                  }}
+                >
+                  <MessageCircle size={20} />
+                  Contact the Development Team on WhatsApp
+                  <ArrowRight size={18} />
+                </a>
+              </div>
+
+              <p style={{ marginTop: "16px" }}>WhatsApp: +263 788 710 818</p>
+
+              <p style={{ marginTop: "8px" }}>
+                When you tap the button, WhatsApp will open with a prepared
+                enquiry message. You can add details about your problem before
+                sending it to our team.
+              </p>
             </div>
           </div>
         </div>
